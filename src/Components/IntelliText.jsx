@@ -35,10 +35,9 @@ const IntelliText = () => {
   }, [isVisible]);
 
   const animateText = () => {
-    // Reset all
+
     setFillProgress({ text1: 0, text2: 0, text3: 0, text4: 0 });
     
-    // Animate text1 first
     setTimeout(() => {
       let progress = 0;
       const interval1 = setInterval(() => {
@@ -47,7 +46,6 @@ const IntelliText = () => {
         if (progress >= 12) {
           clearInterval(interval1);
           
-          // Then animate text2
           setTimeout(() => {
             let progress2 = 0;
             const interval2 = setInterval(() => {
@@ -56,7 +54,6 @@ const IntelliText = () => {
               if (progress2 >= 12) {
                 clearInterval(interval2);
                 
-                // Then animate text3
                 setTimeout(() => {
                   let progress3 = 0;
                   const interval3 = setInterval(() => {
@@ -64,8 +61,7 @@ const IntelliText = () => {
                     setFillProgress(prev => ({ ...prev, text3: progress3 }));
                     if (progress3 >= 12) {
                       clearInterval(interval3);
-                      
-                      // Finally animate text4
+                    
                       setTimeout(() => {
                         let progress4 = 0;
                         const interval4 = setInterval(() => {

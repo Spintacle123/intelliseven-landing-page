@@ -1,8 +1,8 @@
 const Header = () => {
   return (
-    <section className="sticky top-0 z-50"> {/* sticky wrapper */}
+    <section className="sticky top-0 z-50"> 
       <div>
-        {/* Top Contact Info */}
+    
         <nav className="border-b-2 border-gray-300 shadow-lg bg-white">
           <div className="max-w-full flex justify-center items-center py-2 font-light text-gray-700">
             <div className="flex gap-10 px-10 lg:gap-15 pr-10 pr:56">
@@ -13,10 +13,8 @@ const Header = () => {
                   alt="Logo" 
                 />
               </div>
-
-              {/* Contact Info */}
               <div className="flex text-left gap-10 leading-0.5">
-                {/* Phone */}
+      
                 <div className="flex py-4 gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     className="text-main h-8 w-8" viewBox="0 0 24 24">
@@ -28,7 +26,7 @@ const Header = () => {
                   </div>
                 </div>
 
-                {/* Location */}
+             
                 <div className="flex py-4 gap-2 leading-0.5">
                   <svg xmlns="http://www.w3.org/2000/svg" 
                     width="35" height="35" className="text-main" viewBox="0 0 24 24">
@@ -40,7 +38,7 @@ const Header = () => {
                   </div>
                 </div>
 
-                {/* Email */}
+              
                 <div className="flex py-4 gap-2 leading-0.5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" className="text-main" viewBox="0 0 32 32">
                     <path fill="currentColor" d="M28 6H4a2..."/>
@@ -55,7 +53,6 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Main Nav */}
         <nav>
           <div className="absolute top-18 right-1">
             <div className="flex px-56 py-6 bg-main text-xs gap-20 text-white font-regular w-6xl clip-left-slant">
