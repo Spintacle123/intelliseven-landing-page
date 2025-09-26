@@ -2,7 +2,7 @@ import React from 'react'
 
 const Offer = () => {
   return (
-    <div className='h-screen'>
+    <div className=''>
       <div className='flex justify-center'>
         <div className='mt-20 lg:mt-52 max-w-2xl text-center'>
             <p className='text-3xl leading-relaxed'>Empowering businesses with smart, reliable, and future-ready IT solutions designed to transform the way you work.</p>

@@ -14,18 +14,44 @@
   }
   .clip-diagonal {
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+} 
+
 }
+
+
+@font-face {
+  font-family: "Cocogoose";
+  src: url("/fonts/Cocogoose-Pro-Regular-trial.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+@font-face {
+  font-family: "WorkNews";
+  src: url("/fonts/WorkNews.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Moderniz";
+  src: url("/fonts/Moderniz.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @theme {
   --color-main: #BB3232;
   --color-brandRed: #ff0000;
   --color-heroColor: #C6C6C6;
   --color-offerBg: #FFFFFF;
+  --color-GrayOppacity: #878787;
 
   --font-rajdhani: "Rajdhani", sans-serif;
   --font-poppins: "Poppins", sans-serif;
   --font-roboto: "Roboto", sans-serif;
+  --font-Cocogoose: "Cocogoose", serif;
+  --font-WorkNews: "WorkNews", serif;
+  --font-Moderniz: "Moderniz", serif;
 }
 
 .white-fade-bottom {
@@ -33,3 +59,6 @@
 }
 
 
+.shadow-top-only {
+  box-shadow: 0 -20px 30px -10px rgba(0, 0, 0, 0.15);
+}
