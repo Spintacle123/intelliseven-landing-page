@@ -111,18 +111,18 @@ const IntelliText = () => {
         <div className="flex gap-12">
           <div>
             <div className="flex gap-12">
-              <h1 className="text-4xl lg:text-8xl xl:text-9xl font-thin tracking-wider">
+              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
                 {renderAnimatedText('INTELLISEVEN', fillProgress.text1)}
               </h1>
-              <h1 className="text-4xl lg:text-8xl xl:text-9xl font-thin tracking-wider">
+              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
                 {renderAnimatedText('INTELLISEVEN', fillProgress.text2)}
               </h1>
             </div>
             <div className="flex text-end gap-16 ml-60 py-8">
-              <h1 className="text-4xl lg:text-8xl xl:text-9xl font-thin tracking-wider">
+              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
                 {renderAnimatedText('INTELLISEVEN', fillProgress.text3)}
               </h1>
-              <h1 className="text-4xl lg:text-8xl xl:text-9xl font-thin tracking-wider">
+              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
                 {renderAnimatedText('INTELLISEVEN', fillProgress.text4)}
               </h1>
             </div>

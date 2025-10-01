@@ -18,7 +18,6 @@ const Offer = () => {
             <div className='mb-10'>
                <p className='font-rajdhani font-medium text-sm uppercase'>We provide innovative software solutions and reliable systems tailored to your business needs—helping you optimize operations, enhance productivity, and achieve sustainable growth.</p>
             </div>  
-
         </div>
     </div>
   )

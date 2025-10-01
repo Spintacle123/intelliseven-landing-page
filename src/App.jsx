@@ -6,6 +6,8 @@ import Offer from './Components/Offer'
 import Cards from './Components/Cards'
 import IntelliText from './Components/IntelliText'
 import About from './Components/About'
+import Projects from './Components/Projects'
+
 
 
 
@@ -13,14 +15,15 @@ import About from './Components/About'
 function App() {
 
   return (
-    <>
+    <div className=''>
     <Header/>
     <Hero/>
     <Offer/>
     <Cards/>
     <IntelliText/>
     <About/>
-    </>
+    <Projects/>
+    </div>
   )
 }
 

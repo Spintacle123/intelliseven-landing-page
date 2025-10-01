@@ -19,10 +19,10 @@ const Header = () => {
     <section className="sticky top-0 z-50">
       <div>
         <nav className="border-b-2 border-gray-300 shadow-lg bg-white">
-          <div className="max-w-full flex justify-center items-center py-2 font-light text-gray-700">
+          <div className="max-w-full flex justify-center items-center py-5 font-light text-gray-700">
             <div className="flex gap-24  lg:gap-15 pr-10 pr:56">
               <div>
-                <img className="h-15 md:18" src="./Images/i7-Logo.png" alt="Logo" />
+                <img className="h-20 md:18" src="./Images/i7-Logo.png" alt="Logo" />
               </div>
 
               <div className="hidden lg:flex text-left gap-10 leading-0.5">
@@ -112,8 +112,8 @@ const Header = () => {
         </nav>
 
         <nav>
-          <div className="absolute top-18 right-1">
-            <div className="hidden md:flex px-56 py-6 bg-main text-xs gap-20 text-white font-regular w-6xl clip-left-slant">
+          <div className="absolute top-20 right-1 z-50 ">
+            <div className="hidden  md:flex px-28 py-6 bg-main text-xs gap-20 text-white font-regular w-5xl clip-left-slant">
               <a href="">Home</a>
               <a href="">Services</a>
               <a href="">About Us</a>
