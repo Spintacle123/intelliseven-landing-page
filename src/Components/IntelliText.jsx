@@ -17,7 +17,7 @@ const IntelliText = () => {
         if (entry.isIntersecting && !hasAnimated) {
           setIsVisible(true);
           setHasAnimated(true);
-        }
+        } 
       },
       { threshold: 0.3 }
     );
@@ -34,66 +34,43 @@ const IntelliText = () => {
     animateText();
   }, [isVisible]);
 
-  const animateText = () => {
+ const animateText = () => {
+  setFillProgress({ text1: 0, text2: 0, text3: 0, text4: 0 });
 
-    setFillProgress({ text1: 0, text2: 0, text3: 0, text4: 0 });
-    
-    setTimeout(() => {
-      let progress = 0;
-      const interval1 = setInterval(() => {
-        progress += 1;
-        setFillProgress(prev => ({ ...prev, text1: progress }));
-        if (progress >= 12) {
-          clearInterval(interval1);
-          
-          setTimeout(() => {
-            let progress2 = 0;
-            const interval2 = setInterval(() => {
-              progress2 += 1;
-              setFillProgress(prev => ({ ...prev, text2: progress2 }));
-              if (progress2 >= 12) {
-                clearInterval(interval2);
-                
-                setTimeout(() => {
-                  let progress3 = 0;
-                  const interval3 = setInterval(() => {
-                    progress3 += 1;
-                    setFillProgress(prev => ({ ...prev, text3: progress3 }));
-                    if (progress3 >= 12) {
-                      clearInterval(interval3);
-                    
-                      setTimeout(() => {
-                        let progress4 = 0;
-                        const interval4 = setInterval(() => {
-                          progress4 += 1;
-                          setFillProgress(prev => ({ ...prev, text4: progress4 }));
-                          if (progress4 >= 12) {
-                            clearInterval(interval4);
-              
-                            setTimeout(() => {
-                              animateText();
-                            }, 1000);
-                          }
-                        }, 100);
-                      }, 300);
-                    }
-                  }, 100);
-                }, 300);
-              }
-            }, 100);
-          }, 300);
-        }
-      }, 150);
-    }, 500);
+  const animateLine = (key, length, delay, callback) => {
+    let i = 0;
+    const step = () => {
+      setFillProgress(prev => ({ ...prev, [key]: i }));
+      if (i < length) {
+        i++;
+        setTimeout(step, 100); 
+      } else if (callback) {
+        setTimeout(callback, 300); 
+      }
+    };
+
+    setTimeout(step, delay); 
   };
 
+  animateLine("text1", 12, 500, () => { 
+    animateLine("text2", 12, 0, () => {
+      animateLine("text3", 12, 0, () => {
+        animateLine("text4", 12, 0, () => {
+          setTimeout(animateText, 1000);
+        });
+      });
+    });
+  });
+};
+
+ 
   const renderAnimatedText = (text, progress) => {
     return text.split('').map((char, index) => (
       <span
         key={index}
         className={`transition-all duration-300 ${
           index < progress
-            ? 'text-main drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]'
+            ? 'text-main'
             : 'text-[#DDDDDD]  '
         }`}
         style={{

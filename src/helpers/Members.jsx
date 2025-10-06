@@ -1,4 +1,6 @@
 export const Members = [
+
+    /* Founders */
     {
         name: "Gally Angeles",
         role: "CEO",
@@ -12,5 +14,78 @@ export const Members = [
         joined: "Joined since 2019",
         description: "Meet Mary Antonette, our highly skilled and experienced manager delivering successful IT projects with exceptional customer service and satisfaction.",
         src: '/Images/member2.png',
+    },
+    {
+        name: "Alvin Borromeo",
+        role: "COO",
+        joined: "Joined since 2019",
+        description: "Meet Alvin! Our talented UI/UX and frontend expert creates visually stunning and responsive user interfaces, integrating various APIs with frontend frameworks.",
+        src: 'https://www.intelliseven.com.ph/assets/borromeo-IOS6KkG_.png',
+    },
+    {
+        name: "Mark Francis Saldivar",
+        role: "CTO",
+        joined: "Joined since 2019",
+        description: "Meet Mark! He is skilled full-stack developer with a comprehensive understanding of web application development, creating efficient solutions that meet unique client and user needs.",
+        src: 'https://www.intelliseven.com.ph/assets/saldivar-y4ppMnLV.png',
+    },
+    {
+        name: "Kim Byron Barra",
+        role: "Head Manager",
+        joined: "Joined since 2019",
+        description: "Meet Kim! Our exceptional Full Stack Developer tackles problems holistically with efficient, secure, and scalable solutions, thanks to his ability to work on both frontend and backend.",
+        src: 'https://www.intelliseven.com.ph/assets/saldivar-y4ppMnLV.png',
+    },
+    {
+        name: "Humphrey Chica",
+        role: "Head Manager",
+        joined: "Joined since 2019",
+        description: "Meet Humphrey! Our Java backend expert who builds robust and scalable backend systems, and custom solutions to handle complex business logic and data processing requirements.",
+        src: 'https://www.intelliseven.com.ph/assets/chica-xI-4o2m2.png',
+    },
+    {
+        name: "William Elcano II",
+        role: "Head Manager",
+        joined: "Joined since 2019",
+        description: "Meet Humphrey! Our Java backend expert who builds robust and scalable backend systems, and custom solutions to handle complex business logic and data processing requirements.",
+        src: 'https://www.intelliseven.com.ph/assets/chica-xI-4o2m2.png',
+    },
+
+
+    /* Developers */
+    {
+        name: "Michael Layosa",
+        role: "Software Engineer",
+        joined: "Joined since 2019",
+        description: "I'm Michael! a Frontend Developer dedicated to bringing stunning and intuitive web experiences to life. With a keen eye for design and a passion for clean, responsive code, I transform ideas into visually compelling, user-friendly interfaces.",
+        src: 'https://www.intelliseven.com.ph/assets/layosa-4qFLn5Jo.png',
+    },
+    {
+        name: "Aivan Daniel Vitalista",
+        role: "Software Engineer",
+        joined: "Joined since 2019",
+        description: "Meet Aivan! Our new Software Engineer with a passion for problem-solving and a commitment to continuous learning. He is eager to collaborate with the team and make a positive impact on the company's success.",
+        src: 'https://www.intelliseven.com.ph/assets/vitalista-WMepGo7G.png',
+    },
+    {
+        name: "Dondon Bagasbas",
+        role: "Software Engineer",
+        joined: "Joined since 2019",
+        description: "Meet Don! A passionate front-end developer with a keen eye for design and a love for creating seamless user experiences. He specializes in creating visually appealing and responsive websites. Excited to continue his journey of turning ideas into interactive and engaging digital experiences.",
+        src: 'https://www.intelliseven.com.ph/assets/bagasbas-WcQQFpOi.png',
+    },
+    {
+        name: "Remyboy Lapastura",
+        role: "Software Engineer",
+        joined: "Joined since 2019",
+        description: "I'm Remyboy, From optimizing server performance to crafting efficient APIs, I'm here to ensure everything runs smoothly behind the scenes. Dive into my world of code and let’s engineer solutions.",
+        src: 'https://www.intelliseven.com.ph/assets/Lapastura-CRipp4LS.jpg',
+    },
+    {
+        name: "Ralph Lorzano",
+        role: "Software Engineer",
+        joined: "Joined since 2019",
+        description: "I’m Ralph, a developer who thrives on creating the unseen foundations of technology-crafting scalable systems, efficient APIs, and reliable solutions that keep digital experiences running smoothly.  ",
+        src: 'https://www.intelliseven.com.ph/assets/lorzano-MOg9Bsgs.png',
     },
 ]

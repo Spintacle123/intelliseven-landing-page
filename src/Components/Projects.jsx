@@ -4,6 +4,7 @@ import Internship from "./Internship";
 import TeamMember from "./TeamMember";
 import { motion } from "framer-motion";
 import Gallery from "./gallery"
+import Contacts from "./Contacts";
 const Projects = () => {
 
   const projects = [
@@ -80,6 +81,7 @@ const Projects = () => {
                <Internship/>
                <TeamMember className=""/>
                <Gallery/>
+               <Contacts/>
             </div>
         </div>
         </section>

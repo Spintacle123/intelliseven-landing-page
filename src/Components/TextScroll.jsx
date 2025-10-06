@@ -37,7 +37,7 @@ const TextScroll = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 90%", "end 80%"],
+    offset: ["start 90%", "end 70%"],
   });
 
   const words = paragraph.split(" ");
