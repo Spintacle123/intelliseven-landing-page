@@ -1,11 +1,9 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
 @layer base {
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 @layer utilities {
@@ -13,11 +11,9 @@
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 4% 100%);
   }
   .clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-} 
-
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  }
 }
-
 
 @font-face {
   font-family: "Cocogoose";
@@ -38,12 +34,11 @@
   font-style: normal;
 }
 
-
 @theme {
-  --color-main: #BB3232;
+  --color-main: #bb3232;
   --color-brandRed: #ff0000;
-  --color-heroColor: #C6C6C6;
-  --color-offerBg: #FFFFFF;
+  --color-heroColor: #c6c6c6;
+  --color-offerBg: #ffffff;
   --color-GrayOppacity: #878787;
 
   --font-rajdhani: "Rajdhani", sans-serif;
@@ -55,9 +50,31 @@
 }
 
 .white-fade-bottom {
-  background: linear-gradient(to top, white 0%, rgba(255,255,255,0.8) 30%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    white 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    transparent 100%
+  );
 }
 
 .shadow-top-only {
   box-shadow: 0 -20px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes bgMove {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-20px, -15px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.bg-animate {
+  animation: bgMove 18s ease-in-out infinite;
+  will-change: transform;
 }
