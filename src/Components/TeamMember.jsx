@@ -10,79 +10,68 @@ const TeamMember = () => {
   const componentRef = useRef(null);
 
   const tabs = [
-    {
-      number: "01",
-      role: "Founders",
-    },
-    {
-      number: "02",
-      role: "Developers",
-    },
+    { number: "01", role: "Founders" },
+    { number: "02", role: "Developers" },
   ];
 
 
-  const loopedMembers = [...Members, ...Members];
+  const founders = Members.filter((m) => m.type === "founders");
+  const developers = Members.filter((m) => m.type === "developers");
+  const currentGroup = activeTabs === 0 ? founders : developers;
+  const loopedGroup = [...currentGroup, ...currentGroup];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
-        if (entry.isIntersecting) {
-          setIsAutoPlaying(true);
-        } else {
-          setIsAutoPlaying(false);
-        }
+        setIsAutoPlaying(entry.isIntersecting);
       },
-      {
-        threshold: 0.5, 
-      }
+      { threshold: 0.5 }
     );
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
-    }
-
-    return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
-      }
-    };
+    if (componentRef.current) observer.observe(componentRef.current);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     if (!isAutoPlaying || !isInView) return;
     const interval = setInterval(() => {
       setSlideDirection("right");
-      setCurrentIndex((prevIndex) => prevIndex + 2);
+      setCurrentIndex((prev) => prev + 2);
     }, 3000);
-
     return () => clearInterval(interval);
   }, [isAutoPlaying, isInView]);
 
   useEffect(() => {
-    if (currentIndex >= Members.length) {
-      const timeout = setTimeout(() => {
-        setCurrentIndex(0);
-      }, 700); 
+    if (currentIndex >= currentGroup.length) {
+      const timeout = setTimeout(() => setCurrentIndex(0), 700);
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex]);
+  }, [currentIndex, currentGroup.length]);
 
   const handleTabClick = (index) => {
-    setActiveTabs(index);
+    setActiveTabs(index); 
     setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 5000);
+    setCurrentIndex(0);
+    setTimeout(() => setIsAutoPlaying(true), 700);
   };
 
-  const visibleMembers = loopedMembers.slice(currentIndex, currentIndex + 2);
+  let visibleMembers;
+  if (currentIndex === currentGroup.length - 1) {
+    visibleMembers = [currentGroup[currentIndex]];
+  } else {
+    visibleMembers = loopedGroup.slice(currentIndex, currentIndex + 2);
+  }
 
   return (
-    <div ref={componentRef} className="">
+    <div ref={componentRef}>
       <div className="max-w-5xl justify-center mx-auto h-[100vh]">
-        <div className="grid grid-cols-2  mx-auto">
-
+        <div className="grid grid-cols-2 mx-auto">
+          {/* ==== LEFT SIDE ==== */}
           <div className="space-y-3 w-70 mt-20">
-            <h2 className="text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">Meet our Team</h2>
+            <h2 className="text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
+              Meet our Team
+            </h2>
             <h3 className="text-sm text-black/80">
               The People Behind IntelliSeven
             </h3>
@@ -92,58 +81,59 @@ const TeamMember = () => {
               project we deliver.
             </p>
 
-            <div className="">
-              <div className="flex  mx-auto  ">
-                {tabs.map((item, index) => (
-                  <div key={item.number} className="flex-1">
-                    <button
-                      onClick={() => handleTabClick(index)}
-                      className={`w-full flex flex-col items-end transition cursor-pointer ${
-                        activeTabs === index
-                          ? "text-main"
-                          : "text-[text-[#AAAAAA]"
+            <div className="flex mx-auto">
+              {tabs.map((item, index) => (
+                <div key={item.number} className="flex-1">
+                  <button
+                    onClick={() => handleTabClick(index)}
+                    className={`w-full flex flex-col items-end transition cursor-pointer ${
+                      activeTabs === index ? "text-main" : "text-[#AAAAAA]"
+                    }`}
+                  >
+                    <span
+                      className={`text-sm mb-2 transition ${
+                        activeTabs === index ? "text-main" : "text-[#AAAAAA]"
                       }`}
                     >
-                      <span
-                        className={` text-sm mb-2 transiton 
-                                ${
-                                  activeTabs === index
-                                    ? "text-main"
-                                    : "text-[#AAAAAA]"
-                                }`}
-                      >
-                        {item.number}
-                      </span>
-                      <div
-                        className={`w-30  mb-2 ${
-                          activeTabs === index
-                            ? "border-b-2 border-main"
-                            : "border-b-2 text-[#AAAAAA]"
-                        }`}
-                      ></div>
-                      <h3
-                        className={` text-sm font-medium transition
-                                ${
-                                  activeTabs === index
-                                    ? "text-main"
-                                    : "text-[#AAAAAA]"
-                                }`}
-                      >
-                        {item.role}
-                      </h3>
-                    </button>
-                  </div>
-                ))}
-              </div>
+                      {item.number}
+                    </span>
+                    <div
+                      className={`w-30 mb-2 ${
+                        activeTabs === index
+                          ? "border-b-2 border-main"
+                          : "border-b-2 border-[#AAAAAA]"
+                      }`}
+                    ></div>
+                    <h3
+                      className={`text-sm font-medium transition ${
+                        activeTabs === index ? "text-main" : "text-[#AAAAAA]"
+                      }`}
+                    >
+                      {item.role}
+                    </h3>
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
 
+          {/* ==== RIGHT SIDE ==== */}
           <div className="relative">
-            <div className="flex justify-between gap-20">
+            <div
+              className={`flex ${
+                visibleMembers.length === 1
+                  ? "justify-center"
+                  : "justify-between gap-20"
+              }`}
+            >
               {visibleMembers.map((item, index) => (
                 <div
                   key={currentIndex + index}
-                  className={`w-64 mx-auto ${index % 2 === 1 ? "mt-20" : ""}`}
+                  className={`w-64 mx-auto ${
+                    visibleMembers.length === 2 && index % 2 === 1
+                      ? "mt-20"
+                      : ""
+                  }`}
                   style={{
                     animation:
                       isInView && currentIndex !== 0
@@ -154,7 +144,7 @@ const TeamMember = () => {
                   <div className="absolute border-white h-96 w-[250px] bg-white rounded-3xl shadow-lg">
                     <img
                       src={item.src}
-                      alt=""
+                      alt={item.name}
                       className="h-72 w-full object-contain"
                     />
                     <span className="text-xs text-white rotate-90 absolute top-24 bg-[#BB3232] p-2 rounded-3xl -right-14">

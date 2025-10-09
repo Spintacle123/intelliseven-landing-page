@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
+import FloatingShape from "./FloatingShape";
 const TextScroll = () => {
   const [activeTabs, setActiveTabs] = useState(0);
 
@@ -19,9 +19,9 @@ const TextScroll = () => {
       icon2: "/icons/coin.png",
     },
     {
-      title: "HRIS",
+      title: "iTimeHR",
       number: "02",
-      button: "EXPLORE MORE ABOUT HRIS SYSTEM",
+      button: "EXPLORE MORE ABOUT iTimeHR",
     },
     {
       title: "LAWSYS MOBILE",
@@ -37,15 +37,57 @@ const TextScroll = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 90%", "end 70%"],
+    offset: ["start 85%", "end 75%"],
   });
 
   const words = paragraph.split(" ");
 
   return (
     <div>
-      <section className="h-screen">
-        <div className="max-w-5xl flex justify-center mx-auto mt-80">
+
+      <section className="">
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            overflow: "hidden", 
+            pointerEvents: "none", 
+          }}
+        >
+          <FloatingShape
+            src="/Images/animation1.png"
+            top="23%"
+            left="4%"
+        
+            rotateSpeed={25}
+          />
+          <FloatingShape
+            src="/Images/animation2.png"
+            top="34%"
+            left="2%"
+            width="550px"
+            height="550px"
+            rotateSpeed={30}
+          />
+          <FloatingShape
+            src="/Images/animation3.png"
+            top="27%"
+            left="65%"
+            width="200px"
+            height="200px"
+            rotateSpeed={18}
+          />
+          <FloatingShape
+            src="/Images/animation4.png"
+            top="35%"
+            left="78%"
+            width="500px"
+            height="500px"
+            rotateSpeed={22}
+          />
+        </div>
+
+        <div className="max-w-5xl flex justify-center mx-auto mt-60">
           <div className="w-16 border-t border-white/50"></div>
           <span className="mx-4 font-rajdhani font-medium text-white uppercase text-xs">
             Project that we have
@@ -53,23 +95,25 @@ const TextScroll = () => {
           <div className="w-16 border-t border-white/50"></div>
         </div>
 
-        <div className="flex justify-center mx-auto max-w-4xl text-center py-10 mb-44 ">
-          <p ref={ref} className="text-4xl text-white font-poppins font-light leading-relaxed flex flex-wrap gap-2">
-            {words.map((word, i) => {
-              const start = i / words.length;
-              const end = (i + 1) / words.length;
-              const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
-              
-              return (
-                <motion.span
-                  key={i}
-                  style={{ opacity }}
-                  className="transition duration-300"
-                >
-                  {word}
-                </motion.span>
-              );
-            })}
+        <div className="flex justify-center mx-auto max-w-4xl py-10 mb-44">
+          <p ref={ref} className="text-4xl text-center text-white font-poppins font-light leading-relaxed">
+            <span className="flex flex-wrap justify-center gap-2">
+              {words.map((word, i) => {
+                const start = i / words.length;
+                const end = (i + 1) / words.length;
+                const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
+        
+                return (
+                  <motion.span
+                    key={i}
+                    style={{ opacity }}
+                    className="transition duration-300"
+                  >
+                    {word}
+                  </motion.span>
+                );
+              })}
+            </span>
           </p>
         </div>
 
@@ -103,14 +147,16 @@ const TextScroll = () => {
                                 }`}
                   >
                     {item.title}
-                  </h3>
+                  </h3> 
                 </button>
               </div>
             ))}
           </div>
+
+          
           <div className="">
             <div className="max-w-4xl items-center mx-auto ">
-              <div className="flex justify-between mt-28">
+              <div className="flex justify-between mt-16">
                 <div className="">
                   <img
                     src={tabs[activeTabs].src}

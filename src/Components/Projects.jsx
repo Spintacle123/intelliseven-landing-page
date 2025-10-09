@@ -5,6 +5,7 @@ import TeamMember from "./TeamMember";
 import { motion } from "framer-motion";
 import Gallery from "./gallery"
 import Contacts from "./Contacts";
+import Footer from "./Footer";
 const Projects = () => {
 
   const projects = [
@@ -82,6 +83,7 @@ const Projects = () => {
                <TeamMember className=""/>
                <Gallery/>
                <Contacts/>
+               <Footer/>
             </div>
         </div>
         </section>

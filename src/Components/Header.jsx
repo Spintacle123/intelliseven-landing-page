@@ -161,10 +161,10 @@ const Header = () => {
                     initial="hidden"
                     animate="visible"
                     transition={{ delay: index * 0.15 }}
-                    className="relative group font-Moderniz text-2xl tracking-[0.2em] text-gray-100 transition-all duration-500 hover:text-white"
+                    className="relative group font-rajdhani text-2xl tracking-[0.2em] text-gray-100 transition-all duration-500 hover:text-white"
                   >
                     <span className="relative z-10 px-4">{item}</span>
-                    <div className="border-1 border-gray-300/40 mt-4"></div>
+                    <div className="border-1 border-gray-300/10 mt-4"></div>
                     <span className="absolute left-0 top-0 w-full h-full text-gray-400 opacity-0 group-hover:opacity-100 blur-sm transition duration-500">
                       {item}
                     </span>

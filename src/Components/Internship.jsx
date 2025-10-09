@@ -23,7 +23,7 @@ const Internship = () => {
 
   return (
     <div className="justify-center mx-auto">
-      <div className="h-[210vh] flex items-center justify-center text-center mt-24">
+      <div className="h-[250vh] flex items-center justify-center text-center mt-24">
         <div>
           <div className="flex items-center justify-center">
             <div className="w-16 border-t border-main"></div>
@@ -46,7 +46,7 @@ const Internship = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-2 lg:grid-cols-5 gap-10"
+                className="flex lg:grid md:grid-cols-2 lg:grid-cols-5 gap-10"
               >
                 {getCurrentItems().map((item, index) => (
                   <div

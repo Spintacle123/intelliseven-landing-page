@@ -63,7 +63,6 @@ const IntelliText = () => {
   });
 };
 
- 
   const renderAnimatedText = (text, progress) => {
     return text.split('').map((char, index) => (
       <span

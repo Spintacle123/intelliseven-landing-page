@@ -47,7 +47,7 @@ const Card = ({ i, title, description, SecondDescription, src, number, color, pr
   return (
     
     <div ref={container} className="h-screen flex items-center justify-center sticky top-24">
-      
+        
       <motion.div
         style={{
           backgroundColor: color,
@@ -55,8 +55,8 @@ const Card = ({ i, title, description, SecondDescription, src, number, color, pr
           top: `calc(-5vh + ${i * 25}px)`,
           zIndex: projects.length - i,
           boxShadow: shadow || '0 25px 50px 12px rgba(0, 0, 0, 0)',
-        }}
-        className="flex flex-col relative h-[550px] w-[70%] max-w-4xl rounded-4xl p-8 origin-top"
+        }}  
+        className="flex  flex-col relative h-[400px] xl:h-[550px] w-[90%] xl:w-[70%] max-w-4xl rounded-4xl p-8 origin-top"
       >
         <div className="flex h-full  gap-8">
           <div className='border-2 border-gray-500/10 rounded-full  w-70 h-70 absolute top-40 left-36'></div>
@@ -79,7 +79,7 @@ const Card = ({ i, title, description, SecondDescription, src, number, color, pr
               {title}
             </h2>
             <div>
-              <p className="text-sm text-[#555555] font-poppins leading-relaxed mb-4 mt-28 ">{description}</p>
+              <p className="text-sm hidden md:block text-[#555555] font-poppins leading-relaxed mb-4 mt-28 ">{description}</p>
               <div className='text-[#AAAAAA]'>
               <p className='text-xs text-[#AAAAAA]'>{SecondDescription}</p>
             </div>
@@ -97,7 +97,7 @@ const Card = ({ i, title, description, SecondDescription, src, number, color, pr
               />
               </svg>
                 </span>
-              Know More
+              See more
             </button>
 
             </div>
@@ -122,7 +122,7 @@ export default function StackingCards() {
     <div className="text-white" ref={container}>
       <section className="relative">
         {projects.map((project, i) => {
-          const targetScale = 1 - (projects.length - i) * 0.02;
+          const targetScale = 1 - (projects.length - i) * 0.035;
           return (
             <Card
               key={`project_${i}`}

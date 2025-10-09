@@ -7,24 +7,23 @@ import Cards from './Components/Cards'
 import IntelliText from './Components/IntelliText'
 import About from './Components/About'
 import Projects from './Components/Projects'
-
+import Footer from './Components/Footer'
 
 
 
 
 function App() {
-
   return (
-    <div className=''>
-    <Header/>
-    <Hero/>
-    <Offer/>
-    <Cards/>
-    <IntelliText/>
-    <About/>
-    <Projects/>
-    </div>
-  )
+    <>
+      <Header />
+      <Hero />
+      <Offer />
+      <Cards />
+      <About />
+      <Projects />
+      <Footer />
+    </>
+  );
 }
 
 export default App
