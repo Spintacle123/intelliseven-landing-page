@@ -6,7 +6,7 @@ const Offer = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 80%", "end 20%"], 
+    offset: ["start end", "end start"], 
   });
 
   const paragraph = [
@@ -16,22 +16,26 @@ const Offer = () => {
   ];
 
   return (
-    <section ref={ref} className="relative h-[180vh] md:h-[250vh] bg-white">
+    <section
+      ref={ref}
+      className="relative overflow-visible h-[220vh] md:h-[250vh] bg-white"
+    >
       <div className="sticky top-0 h-screen flex items-center justify-center">
-        <motion.div className="text-2xl lg:text-4xl text-center text-black/85 font-poppins font-light leading-relaxed max-w-4xl px-4 space-y-3">
+        <motion.div
+          className="text-lg sm:text-base lg:text-4xl text-center text-black font-poppins font-light leading-relaxed max-w-5xl lg:max-w-4xl space-y-3"
+        >
           {paragraph.map((line, i) => {
-
-            const start = (i * 0.25);
+            const start = i * 0.25;
             const end = start + 0.3;
 
-            const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-            const y = useTransform(scrollYProgress, [start, end], [30, 0]);
+            const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
+            const y = useTransform(scrollYProgress, [start, end], [50, 0]);
 
             return (
               <motion.p
                 key={i}
                 style={{ opacity, y }}
-                className="transition duration-500"
+                className="transition-all duration-700 will-change-transform"
               >
                 {line}
               </motion.p>

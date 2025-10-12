@@ -23,11 +23,11 @@ const Internship = () => {
 
   return (
     <div className="justify-center mx-auto">
-      <div className="h-[250vh] flex items-center justify-center text-center mt-24">
+      <div className="h-[250vh] flex items-center justify-center text-center mt-40">
         <div>
           <div className="flex items-center justify-center">
             <div className="w-16 border-t border-main"></div>
-            <span className="mx-4 text-main uppercase text-sm">Internship Journey</span>
+            <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">Internship Journey</span>
             <div className="w-16 border-t border-main"></div>
           </div>
 
@@ -37,7 +37,6 @@ const Internship = () => {
             </p>
           </div>
 
-          {/* Carousel */}
           <div>
             <AnimatePresence mode="wait">
               <motion.div 

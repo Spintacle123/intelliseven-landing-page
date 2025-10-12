@@ -8,11 +8,11 @@ const Contacts = () => {
   return (
     <div className=' py-24 flex flex-col text-'>
       <div>
-        <div className="flex items-center justify-center">
-          <div className="w-16 border-t border-[#878787]"></div>
-          <span className="mx-4 text-[#878787] uppercase text-sm">Contact Us</span>
-          <div className="w-16 border-t border-[#878787]"></div>
-        </div>
+          <div className="flex items-center justify-center">
+            <div className="w-16 border-t border-main"></div>
+            <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">Contact us</span>
+            <div className="w-16 border-t border-main"></div>
+          </div>
 
         <div className='max-w-5xl bg-white shadow-top-only rounded-[50px] h-[400px] flex justify-center mx-auto mt-12'>
           <div className='grid grid-cols-2 gap-8 p-10'>

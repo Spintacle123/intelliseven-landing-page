@@ -51,10 +51,10 @@ const Projects = () => {
        <section className="bg-[url('/Images/bg-mid.png')] bg-cover bg-center bg-no-repeat mx-auto relative h-[550vh]">
         <div className='min-h-screen py-20'>
           <div className="flex items-center justify-center">
-              <div className="w-16 border-t border-gray-300"></div>
-              <span className="mx-4 text-gray-500 uppercase text-sm font-rajdhani">WHY CHOOSE INTELLISEVEN</span>
-              <div className="w-16 border-t border-gray-300"></div>
-            </div>
+            <div className="w-16 border-t border-main"></div>
+            <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">Why choose Intelliseven</span>
+            <div className="w-16 border-t border-main"></div>
+          </div>
 
             <div className='max-w-5xl py-10 mx-auto'>
                <div className='grid md:grid-cols-1 lg:grid-cols-3 justify-items-center'>

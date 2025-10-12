@@ -9,21 +9,18 @@ import About from './Components/About'
 import Projects from './Components/Projects'
 import Footer from './Components/Footer'
 
-
-
-
 function App() {
   return (
     <>
-      <Header />
-      <Hero />
-      <Offer />
-      <Cards />
-      <About />
-      <Projects />
-      <Footer />
+
+        <Header />
+        <Hero />
+        <Offer />
+        <Cards />
+        <About />
+        <Projects />
     </>
   );
 }
 
-export default App
+export default App;

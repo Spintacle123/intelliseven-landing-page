@@ -48,7 +48,7 @@ export default function Gallery() {
     <div className="py-20 px-4">
       <div className="max-w-5xl flex justify-center items-center mx-auto mb-8">
         <div className="w-16 border-t-2 border-main"></div>
-        <span className="mx-4 font-medium text-main uppercase text-xs tracking-wider">
+        <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">
           Gallery Memories of IntelliSeven
         </span>
         <div className="w-16 border-t-2 border-main"></div>

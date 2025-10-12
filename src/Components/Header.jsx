@@ -22,7 +22,7 @@ const Header = () => {
           <div className="max-w-full flex justify-center items-center py-5 font-light text-gray-700">
             <div className="flex gap-24  lg:gap-15 pr-10 pr:56">
               <div>
-                <img className="h-20 md:18" src="./Images/i7-Logo.png" alt="Logo" />
+                <img   className="w-56 sm:w-48 md:w-64 lg:w-80 h-auto object-contain" src="./Images/i7-Logo.png" alt="Logo" />
               </div>
 
               <div className="hidden lg:flex text-left gap-10 leading-0.5">
