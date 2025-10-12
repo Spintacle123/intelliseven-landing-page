@@ -1,50 +1,45 @@
+// Components/Offer.jsx
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const Offer = () => {
-  const ref = useRef(null);
+export default function Offer() {
+  const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"], 
+    target: containerRef,
+    offset: ["start start", "end start"], // enter when section-top hits viewport-top
+    container: undefined,
   });
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [0.2, 1, 1, 0.4]
+  );
+  const y = useTransform(scrollYProgress, [0, 0.3], [60, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3], [0.92, 1]);
 
   const paragraph = [
     "Empowering businesses with smart, reliable,",
     "and future-ready IT solutions designed",
-    "to transform the way you work."
+    "to transform the way you work.",
   ];
 
   return (
     <section
-      ref={ref}
-      className="relative overflow-visible h-[220vh] md:h-[250vh] bg-white"
+      ref={containerRef}
+      className="relative min-h-[200vh] bg-white overflow-x-hidden" // NOTE: no overflow-hidden on Y
     >
-      <div className="sticky top-0 h-screen flex items-center justify-center">
+      <div className="sticky top-16 md:top-20 h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center justify-center px-4 md:px-8">
         <motion.div
-          className="text-lg sm:text-base lg:text-4xl text-center text-black font-poppins font-light leading-relaxed max-w-5xl lg:max-w-4xl space-y-3"
+          style={{ opacity, y, scale }}
+          className="text-base sm:text-lg md:text-2xl lg:text-4xl text-center text-black font-light leading-relaxed max-w-5xl space-y-3 md:space-y-4"
         >
-          {paragraph.map((line, i) => {
-            const start = i * 0.25;
-            const end = start + 0.3;
-
-            const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
-            const y = useTransform(scrollYProgress, [start, end], [50, 0]);
-
-            return (
-              <motion.p
-                key={i}
-                style={{ opacity, y }}
-                className="transition-all duration-700 will-change-transform"
-              >
-                {line}
-              </motion.p>
-            );
-          })}
+          {paragraph.map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default Offer;
+}

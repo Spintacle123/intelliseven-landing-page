@@ -13,25 +13,35 @@ const Header = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const navItems = ["Home", "Services", "About Us", "Meet Our Team", "Documentation"];
+  const navItems = [
+    "Home",
+    "Services",
+    "About Us",
+    "Meet Our Team",
+    "Documentation",
+  ];
 
   return (
-    <section className="sticky top-0 z-50">
+    <section className="sticky top-0 z-50 ">
       <div>
         <nav className="border-b-2 border-gray-300 shadow-lg bg-white">
-          <div className="max-w-full flex justify-center items-center py-5 font-light text-gray-700">
-            <div className="flex gap-24  lg:gap-15 pr-10 pr:56">
-              <div>
-                <img   className="w-56 sm:w-48 md:w-64 lg:w-80 h-auto object-contain" src="./Images/i7-Logo.png" alt="Logo" />
+          <div className="max-w-full py-3 sm:py-4 lg:py-5 font-light text-gray-700 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between lg:justify-center lg:gap-4 xl:gap-12 relative">
+              <div className="flex-shrink-0">
+                <img
+                  className="w-32 sm:w-40 md:w-48 lg:w-52 xl:w-64 h-auto object-contain"
+                  src="./Images/i7-Logo.png"
+                  alt="Logo"
+                />
               </div>
 
-              <div className="hidden lg:flex text-left gap-10 leading-0.5">
-                <div className="flex py-4 gap-2">
+              <div className="hidden lg:flex flex-wrap justify-center items-center text-left gap-4 xl:gap-8 leading-0.5 max-w-full">
+                <div className="flex py-1 md:py-2 lg:py-3 gap-1.5 md:gap-2 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    className="text-main"
+                    width="18"
+                    height="18"
+                    className="text-main flex-shrink-0 md:w-5 md:h-5 lg:w-6 lg:h-6"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -40,16 +50,20 @@ const Header = () => {
                     />
                   </svg>
                   <div>
-                    <h2 className="font-bold text-xs mt-0">Call us for more Inquiries</h2>
-                    <span className="text-xs mt-0">+63918-909-0331</span>
+                    <h2 className="font-bold text-[9px] md:text-[10px] lg:text-xs leading-tight">
+                      Call us for more Inquiries
+                    </h2>
+                    <span className="text-[9px] md:text-[10px] lg:text-xs">
+                      +63918-909-0331
+                    </span>
                   </div>
                 </div>
-                <div className="flex py-4 gap-2 leading-0.5">
+                <div className="flex py-1 md:py-2 lg:py-3 gap-1.5 md:gap-2 leading-0.5 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    className="text-main"
+                    width="18"
+                    height="18"
+                    className="text-main flex-shrink-0 md:w-5 md:h-5 lg:w-6 lg:h-6"
                     viewBox="0 0 24 24"
                   >
                     <g
@@ -64,16 +78,20 @@ const Header = () => {
                     </g>
                   </svg>
                   <div>
-                    <h2 className="font-bold text-xs">Location</h2>
-                    <span className="text-xs">IBM Plaza Eastwood, Quezon City</span>
+                    <h2 className="font-bold text-[9px] md:text-[10px] lg:text-xs leading-tight">
+                      Location
+                    </h2>
+                    <span className="text-[9px] md:text-[10px] lg:text-xs">
+                      IBM Plaza Eastwood, Quezon City
+                    </span>
                   </div>
                 </div>
-                <div className="flex py-4 gap-2 leading-0.5">
+                <div className="flex py-1 md:py-2 lg:py-3 gap-1.5 md:gap-2 leading-0.5 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
-                    className="text-main"
+                    width="18"
+                    height="18"
+                    className="text-main flex-shrink-0 md:w-5 md:h-5 lg:w-6 lg:h-6"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -82,13 +100,18 @@ const Header = () => {
                     />
                   </svg>
                   <div>
-                    <h2 className="font-bold text-xs">Email Us</h2>
-                    <span className="text-xs">hello@intelliseven.com.ph</span>
+                    <h2 className="font-bold text-[9px] md:text-[10px] lg:text-xs leading-tight">
+                      Email Us
+                    </h2>
+                    <span className="text-[9px] md:text-[10px] lg:text-xs">
+                      hello@intelliseven.com.ph
+                    </span>
                   </div>
                 </div>
               </div>
+
               <button
-                className="lg:hidden text-main focus:outline-none"
+                className="md:hidden text-main focus:outline-none flex-shrink-0"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -112,13 +135,38 @@ const Header = () => {
         </nav>
 
         <nav>
-          <div className="absolute top-20 right-1 z-50 ">
-            <div className="hidden  md:flex px-28 py-6 bg-main text-xs gap-20 text-white font-regular w-5xl clip-left-slant">
-              <a href="">Home</a>
-              <a href="">Services</a>
-              <a href="">About Us</a>
-              <a href="">Meet Our Team</a>
-              <a href="">Documentation</a>
+          <div className="absolute top-16 sm:top-[70px] md:top-20 lg:top-[88px] xl:top-[96px] right-0 z-40">
+            <div className="hidden md:flex px-12 md:px-16 lg:px-20 xl:px-28 py-4 md:py-5 lg:py-6 bg-main text-[10px] md:text-xs lg:text-sm gap-8 md:gap-12 lg:gap-16 xl:gap-20 text-white font-regular clip-left-slant">
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                Services
+              </a>
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                About Us
+              </a>
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                Meet Our Team
+              </a>
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                Documentation
+              </a>
             </div>
           </div>
 
@@ -128,14 +176,12 @@ const Header = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-main text-white flex flex-col  justify-center gap-8 z-50 md:hidden w-screen h-screen overflow-hidden"
+                className="fixed inset-0 bg-main text-white flex flex-col justify-center gap-8 z-50 w-screen h-screen overflow-hidden"
               >
-                
                 <button
                   onClick={() => setIsOpen(false)}
                   className="absolute top-6 right-6 text-white focus:outline-none"
                 >
-                  
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="35"
