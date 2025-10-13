@@ -1,16 +1,26 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
-}
 @layer base {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Use hidden, not clip */
+  }
+
+  #root {
+    width: 100%;
+    position: relative;
+  }
+  
   body {
     font-family: "Poppins", sans-serif;
   }
 }
+
 @layer utilities {
   .clip-left-slant {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 4% 100%);

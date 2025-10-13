@@ -15,7 +15,7 @@ function App() {
       <Header classnamme="" />
       <Hero />
       <Offer />
-      <div className="">
+      <div className="  ">
         <Cards />
       </div>
       <About />

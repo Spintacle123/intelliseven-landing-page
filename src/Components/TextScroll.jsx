@@ -1,6 +1,56 @@
 import { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import FloatingShape from "./FloatingShape";
+import { motion } from "framer-motion";
+
+// FloatingShape component
+const FloatingShape = ({ src, top, left, width = "300px", height = "300px", rotateSpeed = 20 }) => {
+  return (
+    <motion.div
+      style={{
+        position: "absolute",
+        top,
+        left,
+        width,
+        height,
+      }}
+      animate={{
+        rotate: 360,
+      }}
+      transition={{
+        duration: rotateSpeed,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    >
+      <img
+        src={src}
+        alt=""
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+        }}
+      />
+    </motion.div>
+  );
+};
+
+// Word component with whileInView instead of useScroll
+const Word = ({ word, index, total }) => {
+  return (
+    <motion.span
+      initial={{ opacity: 0.2 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, amount: 1 }}
+      transition={{ 
+        duration: 0.3,
+        delay: index * 0.02 // Stagger effect
+      }}
+      className="inline-block"
+    >
+      {word}
+    </motion.span>
+  );
+};
 
 const TextScroll = () => {
   const [activeTabs, setActiveTabs] = useState(0);
@@ -20,38 +70,46 @@ const TextScroll = () => {
       icon2: "/icons/coin.png",
     },
     {
+      id: 2,
       title: "iTimeHR",
+      projectName: "iTimeHR",
       number: "02",
+      description: "Advanced time tracking and HR management system for modern businesses.",
+      comment: "Streamline your workforce management efficiently.",
       button: "EXPLORE MORE ABOUT iTimeHR",
+      src: "/Images/HRIS.png",
+      icon: "/icons/Calendar.png",
+      icon2: "/icons/coin.png",
     },
     {
+      id: 3,
       title: "LAWSYS MOBILE",
+      projectName: "LAWSYS MOBILE",
       number: "03",
+      description: "Mobile-first legal system management platform for on-the-go professionals.",
+      comment: "Access your legal systems anywhere, anytime.",
       button: "EXPLORE MORE ABOUT HRIS LAWSYS MOBILE",
+      src: "/Images/HRIS.png",
+      icon: "/icons/Calendar.png",
+      icon2: "/icons/coin.png",
     },
   ];
 
   const paragraph =
     "A showcase of the systems and solutions we've developed designed to streamline processes, improve efficiency, and deliver real value to businesses across industries.";
 
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 85%", "end 75%"],
-  });
-
   const words = paragraph.split(" ");
 
   return (
     <div>
       <section className="relative">
+        {/* FloatingShape backgrounds */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            overflow: "hidden", 
-            pointerEvents: "none", 
+            overflow: "hidden",
+            pointerEvents: "none",
           }}
         >
           <FloatingShape
@@ -86,34 +144,31 @@ const TextScroll = () => {
           />
         </div>
 
-          <div className="flex items-center justify-center my-24">
-            <div className="w-16 border-t border-main"></div>
-            <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">Project that we have</span>
-            <div className="w-16 border-t border-main"></div>
-          </div>
+        <div className="flex items-center justify-center my-24">
+          <div className="w-16 border-t border-main"></div>
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg text-main font-bold font-poppins">
+            Project that we have
+          </span>
+          <div className="w-16 border-t border-main"></div>
+        </div>
 
+        {/* Animated text scroll - using whileInView */}
         <div className="flex justify-center mx-auto max-w-4xl py-6 sm:py-8 md:py-10 mb-20 sm:mb-32 md:mb-44 px-4">
-          <p ref={ref} className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-center text-white font-poppins font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-center text-white font-poppins font-light leading-relaxed">
             <span className="flex flex-wrap justify-center gap-1 sm:gap-2">
-              {words.map((word, i) => {
-                const start = i / words.length;
-                const end = (i + 1) / words.length;
-                const opacity = useTransform(scrollYProgress, [start, end], [0.1, 1]);
-        
-                return (
-                  <motion.span
-                    key={i}
-                    style={{ opacity }}
-                    className="transition duration-300"
-                  >
-                    {word}
-                  </motion.span>
-                );
-              })}
+              {words.map((word, i) => (
+                <Word
+                  key={i}
+                  word={word}
+                  index={i}
+                  total={words.length}
+                />
+              ))}
             </span>
           </p>
         </div>
 
+        {/* Tabs and content */}
         <div className="px-4">
           <div className="flex max-w-xs sm:max-w-sm md:max-w-lg mx-auto">
             {tabs.map((item, index) => (
@@ -155,7 +210,7 @@ const TextScroll = () => {
                     }`}
                   >
                     {item.title}
-                  </motion.h3> 
+                  </motion.h3>
                 </button>
               </div>
             ))}
@@ -164,27 +219,37 @@ const TextScroll = () => {
           <div className="mt-8 sm:mt-12 md:mt-16">
             <div className="max-w-4xl items-center mx-auto">
               <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
-                 <div className="relative flex flex-col items-center md:items-start">
-                       <div className="flex flex-col gap-3 sm:gap-4 absolute  lg:-top-4 left-8 lg:-left-6 z-20">
-                         <img
-                           src={tabs[activeTabs].icon}
-                           className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 w-12 h-12 sm:w-auto sm:h-auto"
-                           alt=""
-                         />
-                         <img
-                           src={tabs[activeTabs].icon2}
-                           className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 w-12 h-12 sm:w-auto sm:h-auto -ml-3 sm:-ml-4"
-                           alt=""
-                         />
-                       </div>
+                <div className="relative flex flex-col items-center md:items-start">
+                  <div className="flex flex-col gap-3 sm:gap-4 absolute lg:-top-4 left-8 lg:-left-6 z-20">
+                    <img
+                      src={tabs[activeTabs].icon}
+                      className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 w-12 h-12 sm:w-auto sm:h-auto"
+                      alt=""
+                    />
+                    <img
+                      src={tabs[activeTabs].icon2}
+                      className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 w-12 h-12 sm:w-auto sm:h-auto -ml-3 sm:-ml-4"
+                      alt=""
+                    />
+                  </div>
 
-                   <img
-                     src={tabs[activeTabs].src}
-                     alt=""
-                     className="h-[250px] sm:h-[300px] md:h-[350px] relative z-10"
-                   />
-                 </div>
-                <div className="md:mt-20 max-w-full md:max-w-sm space-y-3 sm:space-y-4 md:space-y-5">
+                  <motion.img
+                    key={activeTabs}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                    src={tabs[activeTabs].src}
+                    alt=""
+                    className="h-[250px] sm:h-[300px] md:h-[350px] relative z-10"
+                  />
+                </div>
+                <motion.div
+                  key={activeTabs}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="md:mt-20 max-w-full md:max-w-sm space-y-3 sm:space-y-4 md:space-y-5"
+                >
                   <h1 className="text-white font-medium text-xl sm:text-2xl md:text-3xl">
                     {tabs[activeTabs].projectName}
                   </h1>
@@ -195,7 +260,7 @@ const TextScroll = () => {
                     {tabs[activeTabs].comment}
                   </p>
                   <div>
-                    <button className="flex items-center justify-between mt-4 sm:mt-6 text-[10px] sm:text-xs w-full md:w-80 bg-[#AC0B0B] px-3 sm:px-4 py-2 rounded-full duration-200 cursor-pointer font-rajdhani uppercase text-white">
+                    <button className="flex items-center justify-between mt-4 sm:mt-6 text-[10px] sm:text-xs w-full md:w-80 bg-[#AC0B0B] px-3 sm:px-4 py-2 rounded-full duration-200 cursor-pointer font-rajdhani uppercase text-white hover:bg-[#8A0909] transition-colors">
                       <span className="border py-1.5 px-1.5 sm:py-2 sm:px-2 text-main bg-white rounded-full">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +280,7 @@ const TextScroll = () => {
                       <span className="flex-1 text-center">{tabs[activeTabs].button}</span>
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
