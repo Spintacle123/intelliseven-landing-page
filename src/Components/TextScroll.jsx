@@ -1,8 +1,15 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 // FloatingShape component
-const FloatingShape = ({ src, top, left, width = "300px", height = "300px", rotateSpeed = 20 }) => {
+const FloatingShape = ({
+  src,
+  top,
+  left,
+  width = "300px",
+  height = "300px",
+  rotateSpeed = 20,
+}) => {
   return (
     <motion.div
       style={{
@@ -41,9 +48,9 @@ const Word = ({ word, index, total }) => {
       initial={{ opacity: 0.2 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 1 }}
-      transition={{ 
+      transition={{
         duration: 0.3,
-        delay: index * 0.02 // Stagger effect
+        delay: index * 0.02, // Stagger effect
       }}
       className="inline-block"
     >
@@ -63,7 +70,8 @@ const TextScroll = () => {
       number: "01",
       description:
         "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.",
-      comment: "He found himself transformed in his bed into a horrible vermin.",
+      comment:
+        "He found himself transformed in his bed into a horrible vermin.",
       button: "EXPLORE MORE ABOUT HRIS SYSTEM",
       src: "/Images/HRIS.png",
       icon: "/icons/Calendar.png",
@@ -74,7 +82,8 @@ const TextScroll = () => {
       title: "iTimeHR",
       projectName: "iTimeHR",
       number: "02",
-      description: "Advanced time tracking and HR management system for modern businesses.",
+      description:
+        "Advanced time tracking and HR management system for modern businesses.",
       comment: "Streamline your workforce management efficiently.",
       button: "EXPLORE MORE ABOUT iTimeHR",
       src: "/Images/HRIS.png",
@@ -86,7 +95,8 @@ const TextScroll = () => {
       title: "LAWSYS MOBILE",
       projectName: "LAWSYS MOBILE",
       number: "03",
-      description: "Mobile-first legal system management platform for on-the-go professionals.",
+      description:
+        "Mobile-first legal system management platform for on-the-go professionals.",
       comment: "Access your legal systems anywhere, anytime.",
       button: "EXPLORE MORE ABOUT HRIS LAWSYS MOBILE",
       src: "/Images/HRIS.png",
@@ -101,9 +111,8 @@ const TextScroll = () => {
   const words = paragraph.split(" ");
 
   return (
-    <div>
-      <section className="relative">
-        {/* FloatingShape backgrounds */}
+    <div className="min-h-screen">
+      <section className="relative mt-[100px] md:mt-[600px] lg:mt-[700px]">
         <div
           style={{
             position: "absolute",
@@ -114,13 +123,13 @@ const TextScroll = () => {
         >
           <FloatingShape
             src="/Images/animation1.png"
-            top="23%"
+            top="30%"
             left="4%"
             rotateSpeed={25}
           />
           <FloatingShape
             src="/Images/animation2.png"
-            top="34%"
+            top="40%"
             left="2%"
             width="550px"
             height="550px"
@@ -128,7 +137,7 @@ const TextScroll = () => {
           />
           <FloatingShape
             src="/Images/animation3.png"
-            top="27%"
+            top="33%"
             left="65%"
             width="200px"
             height="200px"
@@ -136,7 +145,7 @@ const TextScroll = () => {
           />
           <FloatingShape
             src="/Images/animation4.png"
-            top="35%"
+            top="41%"
             left="78%"
             width="500px"
             height="500px"
@@ -144,7 +153,7 @@ const TextScroll = () => {
           />
         </div>
 
-        <div className="flex items-center justify-center my-24">
+        <div className="flex items-center justify-center">
           <div className="w-16 border-t border-main"></div>
           <span className="mx-4 text-[12px] sm:text-sm md:text-lg text-main font-bold font-poppins">
             Project that we have
@@ -152,24 +161,18 @@ const TextScroll = () => {
           <div className="w-16 border-t border-main"></div>
         </div>
 
-        {/* Animated text scroll - using whileInView */}
-        <div className="flex justify-center mx-auto max-w-4xl py-6 sm:py-8 md:py-10 mb-20 sm:mb-32 md:mb-44 px-4">
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-center text-white font-poppins font-light leading-relaxed">
+        <div className="flex justify-center mx-auto max-w-4xl py-6 sm:py-8 md:py-10 mb-56 sm:mb-32 md:mb-44 px-4">
+          <p className="text-md sm:text-xl md:text-2xl lg:text-4xl text-center text-white font-poppins font-light leading-relaxed">
             <span className="flex flex-wrap justify-center gap-1 sm:gap-2">
               {words.map((word, i) => (
-                <Word
-                  key={i}
-                  word={word}
-                  index={i}
-                  total={words.length}
-                />
+                <Word key={i} word={word} index={i} total={words.length} />
               ))}
             </span>
           </p>
         </div>
 
         {/* Tabs and content */}
-        <div className="px-4">
+        <div className="px-4 pb-20">
           <div className="flex max-w-xs sm:max-w-sm md:max-w-lg mx-auto">
             {tabs.map((item, index) => (
               <div key={item.number} className="flex-1">
@@ -277,7 +280,9 @@ const TextScroll = () => {
                           />
                         </svg>
                       </span>
-                      <span className="flex-1 text-center">{tabs[activeTabs].button}</span>
+                      <span className="flex-1 text-center">
+                        {tabs[activeTabs].button}
+                      </span>
                     </button>
                   </div>
                 </motion.div>

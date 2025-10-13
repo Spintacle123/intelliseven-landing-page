@@ -9,7 +9,7 @@ export default function Offer() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-white flex items-center justify-center py-20">
+    <section className="relative h-[50vh] bg-white flex items-center justify-center py-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
