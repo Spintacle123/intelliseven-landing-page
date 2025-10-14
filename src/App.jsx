@@ -6,8 +6,9 @@ import Offer from "./Components/Offer";
 import Cards from "./Components/Cards";
 import IntelliText from "./Components/IntelliText";
 import About from "./Components/About";
-import Projects from "./Components/Projects";
-import Footer from "./Components/Footer";
+
+import ProjectsSection from "./Components/ProjectSection";
+import WhyChoose from "./Components/WhyChoose";
 
 function App() {
   return (
@@ -15,11 +16,11 @@ function App() {
       <Header classnamme="" />
       <Hero />
       <Offer />
-      <div className="  ">
-        <Cards />
-      </div>
+      <Cards />
+      <IntelliText />
       <About />
-      <Projects />
+      <WhyChoose classnamme="" />
+      <ProjectsSection />
     </>
   );
 }

@@ -5,7 +5,7 @@ const IntelliText = () => {
     text1: 0,
     text2: 0,
     text3: 0,
-    text4: 0
+    text4: 0,
   });
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -17,7 +17,7 @@ const IntelliText = () => {
         if (entry.isIntersecting && !hasAnimated) {
           setIsVisible(true);
           setHasAnimated(true);
-        } 
+        }
       },
       { threshold: 0.3 }
     );
@@ -34,46 +34,44 @@ const IntelliText = () => {
     animateText();
   }, [isVisible]);
 
- const animateText = () => {
-  setFillProgress({ text1: 0, text2: 0, text3: 0, text4: 0 });
+  const animateText = () => {
+    setFillProgress({ text1: 0, text2: 0, text3: 0, text4: 0 });
 
-  const animateLine = (key, length, delay, callback) => {
-    let i = 0;
-    const step = () => {
-      setFillProgress(prev => ({ ...prev, [key]: i }));
-      if (i < length) {
-        i++;
-        setTimeout(step, 100); 
-      } else if (callback) {
-        setTimeout(callback, 300); 
-      }
+    const animateLine = (key, length, delay, callback) => {
+      let i = 0;
+      const step = () => {
+        setFillProgress((prev) => ({ ...prev, [key]: i }));
+        if (i < length) {
+          i++;
+          setTimeout(step, 100);
+        } else if (callback) {
+          setTimeout(callback, 300);
+        }
+      };
+
+      setTimeout(step, delay);
     };
 
-    setTimeout(step, delay); 
-  };
-
-  animateLine("text1", 12, 500, () => { 
-    animateLine("text2", 12, 0, () => {
-      animateLine("text3", 12, 0, () => {
-        animateLine("text4", 12, 0, () => {
-          setTimeout(animateText, 1000);
+    animateLine("text1", 12, 500, () => {
+      animateLine("text2", 12, 0, () => {
+        animateLine("text3", 12, 0, () => {
+          animateLine("text4", 12, 0, () => {
+            setTimeout(animateText, 1000);
+          });
         });
       });
     });
-  });
-};
+  };
 
   const renderAnimatedText = (text, progress) => {
-    return text.split('').map((char, index) => (
+    return text.split("").map((char, index) => (
       <span
         key={index}
         className={`transition-all duration-300 ${
-          index < progress
-            ? 'text-main'
-            : 'text-[#DDDDDD]  '
+          index < progress ? "text-main" : "text-[#DDDDDD]  "
         }`}
         style={{
-          transitionDelay: `${index * 50}ms`
+          transitionDelay: `${index * 50}ms`,
         }}
       >
         {char}
@@ -87,19 +85,19 @@ const IntelliText = () => {
         <div className="flex gap-12">
           <div>
             <div className="flex gap-12">
-              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
-                {renderAnimatedText('INTELLISEVEN', fillProgress.text1)}
+              <h1 className="text-4xl lg:text-7xl xl:text-[120px] font-thin tracking-wider">
+                {renderAnimatedText("INTELLISEVEN", fillProgress.text1)}
               </h1>
-              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
-                {renderAnimatedText('INTELLISEVEN', fillProgress.text2)}
+              <h1 className="text-4xl lg:text-7xl xl:text-[120px] font-thin tracking-wider">
+                {renderAnimatedText("INTELLISEVEN", fillProgress.text2)}
               </h1>
             </div>
             <div className="flex text-end gap-16 ml-60 py-8">
-              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
-                {renderAnimatedText('INTELLISEVEN', fillProgress.text3)}
+              <h1 className="text-4xl lg:text-7xl xl:text-[120px] font-thin tracking-wider">
+                {renderAnimatedText("INTELLISEVEN", fillProgress.text3)}
               </h1>
-              <h1 className="text-4xl lg:text-7xl xl:text-8xl font-thin tracking-wider">
-                {renderAnimatedText('INTELLISEVEN', fillProgress.text4)}
+              <h1 className="text-4xl lg:text-7xl xl:text-[120px] font-thin tracking-wider">
+                {renderAnimatedText("INTELLISEVEN", fillProgress.text4)}
               </h1>
             </div>
           </div>

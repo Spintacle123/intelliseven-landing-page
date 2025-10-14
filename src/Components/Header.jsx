@@ -4,14 +4,18 @@ import { motion, AnimatePresence } from "framer-motion";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-
-
   const linkVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const navItems = ["Home", "Services", "About Us", "Meet Our Team", "Documentation"];
+  const navItems = [
+    "Home",
+    "Services",
+    "About Us",
+    "Meet Our Team",
+    "Documentation",
+  ];
 
   return (
     <section className="sticky top-0 z-50">
@@ -20,7 +24,11 @@ const Header = () => {
           <div className="max-w-full flex justify-center items-center py-5 font-light text-gray-700">
             <div className="flex gap-24  lg:gap-15 pr-10 pr:56">
               <div>
-                <img className="w-56 sm:w-48 md:w-64 lg:w-80 h-auto object-contain" src="./Images/i7-Logo.png" alt="Logo" />
+                <img
+                  className="w-56 sm:w-48 md:w-64 lg:w-80 h-auto object-contain"
+                  src="./Images/i7-Logo.png"
+                  alt="Logo"
+                />
               </div>
 
               <div className="hidden lg:flex text-left gap-10 leading-0.5">
@@ -38,7 +46,9 @@ const Header = () => {
                     />
                   </svg>
                   <div>
-                    <h2 className="font-bold text-xs mt-0">Call us for more Inquiries</h2>
+                    <h2 className="font-bold text-xs mt-0">
+                      Call us for more Inquiries
+                    </h2>
                     <span className="text-xs mt-0">+63918-909-0331</span>
                   </div>
                 </div>
@@ -63,7 +73,9 @@ const Header = () => {
                   </svg>
                   <div>
                     <h2 className="font-bold text-xs">Location</h2>
-                    <span className="text-xs">IBM Plaza Eastwood, Quezon City</span>
+                    <span className="text-xs">
+                      IBM Plaza Eastwood, Quezon City
+                    </span>
                   </div>
                 </div>
                 <div className="flex py-4 gap-2 leading-0.5">
@@ -128,12 +140,10 @@ const Header = () => {
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 bg-main text-white flex flex-col  justify-center gap-8 z-50 md:hidden w-screen h-screen overflow-hidden"
               >
-                
                 <button
                   onClick={() => setIsOpen(false)}
                   className="absolute top-6 right-6 text-white focus:outline-none"
                 >
-                  
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="35"

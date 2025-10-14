@@ -14,7 +14,6 @@ const TeamMember = () => {
     { number: "02", role: "Developers" },
   ];
 
-
   const founders = Members.filter((m) => m.type === "founders");
   const developers = Members.filter((m) => m.type === "developers");
   const currentGroup = activeTabs === 0 ? founders : developers;
@@ -50,7 +49,7 @@ const TeamMember = () => {
   }, [currentIndex, currentGroup.length]);
 
   const handleTabClick = (index) => {
-    setActiveTabs(index); 
+    setActiveTabs(index);
     setIsAutoPlaying(false);
     setCurrentIndex(0);
     setTimeout(() => setIsAutoPlaying(true), 700);
@@ -65,22 +64,22 @@ const TeamMember = () => {
 
   return (
     <div ref={componentRef}>
-      <div className="max-w-5xl justify-center mx-auto min-h-screen lg:h-[100vh] px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+      <div className="max-w-5xl justify-center mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-8 lg:gap-0">
           {/* ==== LEFT SIDE ==== */}
           <div className="space-y-3 w-full lg:w-70 mt-8 lg:mt-20">
             <div className="flex items-center flex-col md:items-start space-y-3 ">
-            <h2 className="text-4xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
-              Meet our Team
-            </h2>
-            <h3 className="text-xs  sm:text-sm text-black/80">
-              The People Behind IntelliSeven
-            </h3>
-            <p className="text-[#AAAAAA] text-center font-poppins text-xs sm:text-sm">
-              Our strength lies in our people—skilled innovators, problem
-              solvers, and creators who bring passion and expertise to every
-              project we deliver.
-            </p>
+              <h2 className="text-4xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
+                Meet our Team
+              </h2>
+              <h3 className="text-xs  sm:text-sm text-black/80">
+                The People Behind IntelliSeven
+              </h3>
+              <p className="text-[#AAAAAA] text-center font-poppins text-xs sm:text-sm">
+                Our strength lies in our people—skilled innovators, problem
+                solvers, and creators who bring passion and expertise to every
+                project we deliver.
+              </p>
             </div>
             <div className="flex mx-auto pt-4">
               {tabs.map((item, index) => (
@@ -155,12 +154,12 @@ const TeamMember = () => {
 
                   <div className="relative top-28 sm:top-40 lg:top-48 w-44 sm:w-64 lg:w-[300px] -left-6 sm:-left-12 lg:-left-20 bg-white rounded-2xl shadow-md mt-4">
                     <div className="p-2.5 sm:p-4 lg:p-5">
-                      <p className="text-[9px] sm:text-xs lg:text-sm text-[#AAAAAA] font-poppins leading-tight sm:leading-normal">
+                      <p className="text-[12px] sm:text-xs lg:text-sm text-[#AAAAAA] font-poppins leading-tight sm:leading-normal">
                         {item.description}
                       </p>
                     </div>
                     <div className="p-1.5 px-3 sm:p-2 sm:px-6 lg:px-8 bg-[#BB3232] rounded-b-2xl">
-                      <h3 className="font-poppins text-white text-[10px] sm:text-sm leading-tight">
+                      <h3 className="font-poppins text-white text-[12px] sm:text-sm leading-tight">
                         {item.name}
                       </h3>
                       <span className="text-[9px] sm:text-xs lg:text-sm font-poppins font-thin text-white">

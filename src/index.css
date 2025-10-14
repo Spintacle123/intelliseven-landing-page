@@ -1,6 +1,18 @@
+/* 1) Tailwind first */
 @import "tailwindcss";
+
+/* 2) Other @import rules (e.g., Google Fonts) */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
+/* 3) Tailwind theme tokens */
+@theme {
+  --color-main: #bb3232;
+  /* ... */
+  --font-poppins: "Poppins", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+/* 4) Base styles (in a layer) */
 @layer base {
   html,
   body {
@@ -8,20 +20,18 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
   }
-
   #root {
     width: 100%;
     position: relative;
   }
-  
   body {
     font-family: "Poppins", sans-serif;
-    
   }
 }
 
+/* 5) Utilities (in a layer) */
 @layer utilities {
   .clip-left-slant {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 4% 100%);
@@ -31,40 +41,30 @@
   }
 }
 
+/* 6) Local fonts (ok here, after imports) */
 @font-face {
   font-family: "Cocogoose";
   src: url("/fonts/Cocogoose-Pro-Regular-trial.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "WorkNews";
   src: url("/fonts/WorkNews.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Moderniz";
   src: url("/fonts/Moderniz.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-@theme {
-  --color-main: #bb3232;
-  --color-brandRed: #ff0000;
-  --color-heroColor: #c6c6c6;
-  --color-offerBg: #ffffff;
-  --color-GrayOppacity: #878787;
-
-  --font-rajdhani: "Rajdhani", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
-  --font-Cocogoose: "Cocogoose", serif;
-  --font-WorkNews: "WorkNews", serif;
-  --font-Moderniz: "Moderniz", serif;
-}
-
+/* 7) Your extra classes */
 .white-fade-bottom {
   background: linear-gradient(
     to top,
@@ -73,23 +73,20 @@
     transparent 100%
   );
 }
-
 .shadow-top-only {
   box-shadow: 0 -20px 30px -10px rgba(0, 0, 0, 0.15);
 }
-
 @keyframes bgMove {
   0% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(0, 0) scale(1);
   }
   50% {
     transform: translate(-20px, -15px) scale(1.05);
   }
   100% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(0, 0) scale(1);
   }
 }
-
 .bg-animate {
   animation: bgMove 18s ease-in-out infinite;
   will-change: transform;
