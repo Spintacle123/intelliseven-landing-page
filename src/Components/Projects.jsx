@@ -1,5 +1,5 @@
 import { useState} from "react";
-import TextScroll from "./textScroll";
+import TextScroll from "./TextScroll";
 import Internship from "./Internship";
 import TeamMember from "./TeamMember";
 import { motion } from "framer-motion";
@@ -30,7 +30,7 @@ const Projects = () => {
         height="24" 
         viewBox="0 0 24 24">
             <path fill="currentColor" d="M12 4.5A1.75 1.75 0 1 0 12 8a1.75 1.75 0 0 0 0-3.5M8.75 6.25a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0M5 6.5a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3M2 8a3 3 0 1 1 6 0a3 3 0 0 1-6 0m15.5 0a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0M19 5a3 3 0 1 0 0 6a3 3 0 0 0 0-6M7.5 12.75c0-.966.784-1.75 1.75-1.75h5.5c.966 0 1.75.784 1.75 1.75v3.75a4.5 4.5 0 1 1-9 0zm1.75-.25a.25.25 0 0 0-.25.25v3.75a3 3 0 1 0 6 0v-3.75a.25.25 0 0 0-.25-.25zm-2.64-.522q-.109.369-.11.772v.81l-2.814.754a.25.25 0 0 0-.177.306l.712 2.657a3 3 0 0 0 3.161 2.212c.315.486.705.919 1.153 1.282a4.5 4.5 0 0 1-5.763-3.107l-.712-2.656a1.75 1.75 0 0 1 1.237-2.143zm8.855 8.793q.125.042.253.076a4.5 4.5 0 0 0 5.511-3.182l.712-2.656a1.75 1.75 0 0 0-1.237-2.144l-3.314-.888q.109.37.11.773v.81l2.816.754a.25.25 0 0 1 .176.306l-.712 2.657a3 3 0 0 1-3.162 2.212a5.5 5.5 0 0 1-1.153 1.282"/></svg>
-    )
+      )
     },
     {
     title: ' INNOVATION',
@@ -45,11 +45,11 @@ const Projects = () => {
     )
     },
   ]
-
+ 
   return (
     <div>
-       <section className="bg-[url('/Images/bg-mid.png')] bg-cover bg-center bg-no-repeat mx-auto relative h-[550vh]">
-        <div className='min-h-screen py-20'>
+       <section className="bg-[url('/Images/bg-mid.png')] bg-cover bg-center bg-no-repeat mx-auto relative h-[590vh] sm:h-[500vh] lg:h-[500vh]">
+        <div className=' py-20'>
           <div className="flex items-center justify-center">
             <div className="w-16 border-t border-main"></div>
             <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">Why choose Intelliseven</span>
@@ -74,11 +74,11 @@ const Projects = () => {
                    </div>
                     ))}
                </div>
-           </div>
-           <div className="max-h-screen">
+            </div>
+           <div className="">
                  <TextScroll />
            </div>
-            <div className="h-screen"> 
+            <div className=""> 
                <Internship/>
                <TeamMember className=""/>
                <Gallery/>

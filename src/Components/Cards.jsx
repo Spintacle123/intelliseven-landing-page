@@ -63,7 +63,7 @@ const Card = ({
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-16 sm:top-25 md:top-12 lg:top-20 xl:top-24"
+      className="h-screen flex items-center justify-center sticky top-16 sm:top-25 md:top-12 lg:top-20 xl:top-24 pt-2"
     >
       <motion.div
         style={{
@@ -73,7 +73,7 @@ const Card = ({
           zIndex: projects.length - i,
           boxShadow: shadow || "0 25px 50px 12px rgba(0, 0, 0, 0)",
         }}
-        className="flex flex-col relative h-[640px] sm:h-[540px] md:h-[500px] lg:h-[450px] xl:h-[550px] w-[92%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[70%] max-w-4xl rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl p-5 sm:p-6 md:p-7 lg:p-8 origin-top"
+        className="flex flex-col relative h-[530px] sm:h-[540px] md:h-[500px] lg:h-[450px] xl:h-[550px] w-[92%] sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[70%] max-w-4xl rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-4xl p-5 sm:p-6 md:p-7 lg:p-8 origin-top"
       >
         <div className="flex flex-col md:flex-row h-full gap-5 sm:gap-6 md:gap-6 lg:gap-8">
           {/* Left Image Section */}

@@ -93,7 +93,7 @@ const Hero = () => {
           <img
             src="/Images/Hero.png"
             alt="Hero"
-            className="mx-auto block w-auto max-w-sm object-contain"
+            className="mx-auto block w-full max-w-sm object-contain"
           />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent" />
         </motion.div>
@@ -156,7 +156,7 @@ const Hero = () => {
 
         <motion.div
           style={{ y: imageY, scale: imageScale }}
-          className="absolute left-1/2 top-0 bottom-0 z-10 flex items-end -translate-x-[40px] md:-translate-x-[60px] lg:-translate-x-[90px] xl:-translate-x-[70px] 2xl:-translate-x-[60px]"
+          className="absolute left-1/2 top-0 bottom-0 z-10 flex items-end -translate-x-[40px] md:-translate-x-[60px] lg:-translate-x-[90px] xl:-translate-x-[10px] 2xl:-translate-x-[10px]"
         >
           <div className="relative">
             <motion.img
@@ -170,7 +170,7 @@ const Hero = () => {
               }}
               src="/Images/Hero.png"
               alt="Hero"
-              className="w-auto object-contain object-bottom h-[540px] md:h-[620px] lg:h-[700px] xl:h-[720px] 2xl:h-[760px]"
+              className="w-auto object-contain object-bottom h-[540px] md:h-[620px] lg:h-[700px] xl:h-[720px] 2xl:h-[700px]"
             />
 
             <motion.div

@@ -65,25 +65,26 @@ const TeamMember = () => {
 
   return (
     <div ref={componentRef}>
-      <div className="max-w-5xl justify-center mx-auto h-[100vh]">
-        <div className="grid grid-cols-2 mx-auto">
+      <div className="max-w-5xl justify-center mx-auto min-h-screen lg:h-[100vh] px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-8 lg:gap-0">
           {/* ==== LEFT SIDE ==== */}
-          <div className="space-y-3 w-70 mt-20">
-            <h2 className="text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
+          <div className="space-y-3 w-full lg:w-70 mt-8 lg:mt-20">
+            <div className="flex items-center flex-col md:items-start space-y-3 ">
+            <h2 className="text-4xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
               Meet our Team
             </h2>
-            <h3 className="text-sm text-black/80">
+            <h3 className="text-xs  sm:text-sm text-black/80">
               The People Behind IntelliSeven
             </h3>
-            <p className="text-[#AAAAAA] font-poppins text-sm">
+            <p className="text-[#AAAAAA] text-center font-poppins text-xs sm:text-sm">
               Our strength lies in our people—skilled innovators, problem
               solvers, and creators who bring passion and expertise to every
               project we deliver.
             </p>
-
-            <div className="flex mx-auto">
+            </div>
+            <div className="flex mx-auto pt-4">
               {tabs.map((item, index) => (
-                <div key={item.number} className="flex-1">
+                <div key={item.number} className="flex mx-auto lg:flex-1">
                   <button
                     onClick={() => handleTabClick(index)}
                     className={`w-full flex flex-col items-end transition cursor-pointer ${
@@ -91,21 +92,21 @@ const TeamMember = () => {
                     }`}
                   >
                     <span
-                      className={`text-sm mb-2 transition ${
+                      className={`text-xs sm:text-sm mb-2 transition ${
                         activeTabs === index ? "text-main" : "text-[#AAAAAA]"
                       }`}
                     >
                       {item.number}
                     </span>
                     <div
-                      className={`w-30 mb-2 ${
+                      className={`w-30 sm:w-20 lg:w-30 mb-2 ${
                         activeTabs === index
                           ? "border-b-2 border-main"
                           : "border-b-2 border-[#AAAAAA]"
                       }`}
                     ></div>
                     <h3
-                      className={`text-sm font-medium transition ${
+                      className={`text-xs sm:text-sm font-medium transition ${
                         activeTabs === index ? "text-main" : "text-[#AAAAAA]"
                       }`}
                     >
@@ -118,20 +119,20 @@ const TeamMember = () => {
           </div>
 
           {/* ==== RIGHT SIDE ==== */}
-          <div className="relative">
+          <div className="relative mt-8 lg:mt-0">
             <div
               className={`flex ${
                 visibleMembers.length === 1
                   ? "justify-center"
-                  : "justify-between gap-20"
+                  : "justify-center gap-3 sm:gap-8 lg:gap-20"
               }`}
             >
               {visibleMembers.map((item, index) => (
                 <div
                   key={currentIndex + index}
-                  className={`w-64 mx-auto ${
+                  className={`w-36 sm:w-52 lg:w-64 mx-auto flex-shrink-0 ${
                     visibleMembers.length === 2 && index % 2 === 1
-                      ? "mt-20"
+                      ? "mt-10 sm:mt-16 lg:mt-20"
                       : ""
                   }`}
                   style={{
@@ -141,28 +142,28 @@ const TeamMember = () => {
                         : "none",
                   }}
                 >
-                  <div className="absolute border-white h-96 w-[250px] bg-white rounded-3xl shadow-lg">
+                  <div className="absolute border-white h-60 sm:h-80 lg:h-96 w-36 sm:w-52 lg:w-[250px] bg-white rounded-3xl shadow-lg">
                     <img
                       src={item.src}
                       alt={item.name}
-                      className="h-72 w-full object-contain"
+                      className="h-44 sm:h-60 lg:h-72 w-full object-contain"
                     />
-                    <span className="text-xs text-white rotate-90 absolute top-24 bg-[#BB3232] p-2 rounded-3xl -right-14">
+                    <span className="text-[9px] sm:text-xs text-white rotate-90 absolute top-14 sm:top-20 lg:top-24 bg-[#BB3232] p-1 sm:p-2 rounded-3xl -right-8 sm:-right-12 lg:-right-14">
                       {item.joined}
                     </span>
                   </div>
 
-                  <div className="relative top-48 w-[300px] -left-20 bg-white rounded-2xl shadow-md mt-4">
-                    <div className="p-5">
-                      <p className="text-sm text-[#AAAAAA] font-poppins">
+                  <div className="relative top-28 sm:top-40 lg:top-48 w-44 sm:w-64 lg:w-[300px] -left-6 sm:-left-12 lg:-left-20 bg-white rounded-2xl shadow-md mt-4">
+                    <div className="p-2.5 sm:p-4 lg:p-5">
+                      <p className="text-[9px] sm:text-xs lg:text-sm text-[#AAAAAA] font-poppins leading-tight sm:leading-normal">
                         {item.description}
                       </p>
                     </div>
-                    <div className="p-2 px-8 bg-[#BB3232] rounded-b-2xl">
-                      <h3 className="font-poppins text-white text-sm">
+                    <div className="p-1.5 px-3 sm:p-2 sm:px-6 lg:px-8 bg-[#BB3232] rounded-b-2xl">
+                      <h3 className="font-poppins text-white text-[10px] sm:text-sm leading-tight">
                         {item.name}
                       </h3>
-                      <span className="text-sm font-poppins font-thin text-white">
+                      <span className="text-[9px] sm:text-xs lg:text-sm font-poppins font-thin text-white">
                         {item.role}
                       </span>
                     </div>
