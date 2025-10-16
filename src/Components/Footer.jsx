@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="bg-white py-10 px-4">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-left md:text-left">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
         <div className="order-2 lg:order-2 md:order-1 flex flex-col sm:flex-row justify-center md:justify-start gap-10">
           <div className="flex flex-col space-y-3">
             <a href="#" className="text-xs text-[#555555] font-rajdhani font-semibold">TOP</a>
@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="order-3 lg:order-2 md:order-3 flex flex-col items-center justify-center">
+        <div className="order-3 lg:order-2 md:order-2 flex flex-col items-center justify-center">
           <img
             src="/Images/i7-Logo.png"
             alt="IntelliSeven Logo"

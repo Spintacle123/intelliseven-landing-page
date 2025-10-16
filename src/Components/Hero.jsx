@@ -124,7 +124,7 @@ const Hero = () => {
               }}
               className="block text-center md:text-4xl lg:text-5xl xl:text-7xl text-gray-300"
             >
-              Your business is
+              <span className="text-[#e5c397] ">your</span> <span className="italic text-black text-df">Business</span> <span className="text-[#e5c397] ">is</span>
             </motion.span>
 
             <motion.span
@@ -138,20 +138,11 @@ const Hero = () => {
               }}
               className="mt-2 block md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-[#D8A4A4] to-[#BB3232] bg-clip-text text-transparent"
             >
-              our business.
+             <span className="text-[#e5c397] ">our</span> <span className="italic">Business.</span>
             </motion.span>
           </h1>
 
-          <motion.div
-            initial={accentLine.initial}
-            animate={accentLine.animate}
-            transition={{
-              duration: 1.2,
-              delay: animationTimings.desktop.delays.accentLine,
-              ease: "easeOut",
-            }}
-            className="mt-8 h-[2px] bg-gradient-to-r from-transparent via-[#BB3232] to-transparent"
-          />
+
         </motion.div>
 
         <motion.div
@@ -170,7 +161,7 @@ const Hero = () => {
               }}
               src="/Images/Hero.png"
               alt="Hero"
-              className="w-auto object-contain object-bottom h-[540px] md:h-[620px] lg:h-[700px] xl:h-[720px] 2xl:h-[700px]"
+              className="w-auto object-contain object-bottom h-[540px] md:h-[620px] lg:h-[600px] xl:h-[720px] 2xl:h-[700px]"
             />
 
             <motion.div

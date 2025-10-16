@@ -6,8 +6,22 @@ const Internship = () => {
   const [activeTabs, setActiveTabs] = useState(0);
   const [currentMobileCard, setCurrentMobileCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
 
-  const itemsPerPage = 5;
+  // DITO MO ADJUST ILANG CARD GUSTO MO PER SCREEN
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      const width = window.innerWidth;
+      if (width < 640) setItemsPerPage(1); 
+      else if (width < 1024) setItemsPerPage(3);
+      else if (width < 1280) setItemsPerPage(4);
+      else setItemsPerPage(5); 
+    };
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
   const totalPages = Math.ceil(Caraosell.length / itemsPerPage);
   const tabs = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -39,18 +53,20 @@ const Internship = () => {
 
   return (
     <div className="justify-center mx-auto overflow-x-hidden w-full">
-      <div className="flex items-center justify-center text-center mt-10 sm:mt-16 md:mt-20 xl:mt-40 overflow-x-hidden px-4">
-        <div className="w-full max-w-full overflow-x-hidden">
+      <div className="flex items-center justify-center text-center mt-10 sm:mt-16 md:mt-20 xl:mt-40 px-4">
+        <div className="w-full max-w-full">
+
           <div className="flex items-center justify-center">
             <div className="w-6 sm:w-8 md:w-12 lg:w-16 border-t border-main"></div>
-            <span className="mx-2 sm:mx-3 md:mx-4 text-xs sm:text-sm md:text-base lg:text-lg text-main font-bold whitespace-nowrap">
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
               Internship Journey
             </span>
             <div className="w-6 sm:w-8 md:w-12 lg:w-16 border-t border-main"></div>
           </div>
 
-          <div className="flex max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl justify-center mx-auto mb-10 sm:mb-16 md:mb-24 lg:mb-40 py-3 sm:py-4 md:py-5 px-4 sm:px-6">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-center text-main">
+    
+          <div className="flex justify-center mx-auto mb-10 sm:mb-16 md:mb-24 py-3 sm:py-4 md:py-5 px-4 sm:px-6">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-main max-w-3xl">
               Discover real stories from interns as they share their journey,
               experiences, and growth throughout the program.
             </p>
@@ -69,11 +85,11 @@ const Internship = () => {
                     transition={{ duration: 0.3 }}
                     className="flex justify-center px-4"
                   >
-                    <div className="w-full max-w-sm p-5 bg-white shadow-lg rounded-3xl flex flex-col justify-between">
+                    <div className="w-full max-w-sm p-6 bg-white shadow-lg rounded-3xl flex flex-col justify-between">
                       <div className="flex justify-center mb-4">
                         <img
                           src={Caraosell[currentMobileCard].img}
-                          className="h-20 w-20 object-cover rounded-full"
+                          className="h-24 w-24 object-cover rounded-full"
                           alt=""
                         />
                       </div>
@@ -96,11 +112,9 @@ const Internship = () => {
                             {Caraosell[currentMobileCard].name}
                           </h3>
                         </div>
-                        <div className="flex ml-1">
-                          <p className="text-xs text-main uppercase">
-                            {Caraosell[currentMobileCard].batch}
-                          </p>
-                        </div>
+                        <p className="text-xs text-main uppercase ml-1">
+                          {Caraosell[currentMobileCard].batch}
+                        </p>
                       </div>
                     </div>
                   </motion.div>
@@ -112,12 +126,27 @@ const Internship = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.3 }}
-                  className="flex flex-nowrap gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 justify-center max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12"
+                  className="
+                    grid 
+                    grid-cols-1 
+                    sm:grid-cols-2 
+                    md:grid-cols-3 
+                    lg:grid-cols-4 
+                    xl:grid-cols-5
+                    gap-6 
+                    px-4 sm:px-6 md:px-8 lg:px-12 
+                    justify-items-center
+                  "
                 >
                   {getCurrentItems().map((item, index) => (
                     <div
                       key={index}
-                      className="flex-shrink-0 w-56 md:w-60 lg:w-64 p-5 bg-white shadow-lg rounded-3xl flex flex-col justify-between"
+                      className="
+                        bg-white shadow-lg rounded-3xl p-6 
+                        flex flex-col justify-between 
+                        w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[300px]
+                        hover:scale-105 transition-transform duration-300
+                      "
                     >
                       <div className="flex justify-center mb-4">
                         <img
@@ -139,15 +168,13 @@ const Internship = () => {
                       <div className="flex flex-col gap-2">
                         <div className="flex gap-1 items-center">
                           <span className="text-yellow-300">{item.icon}</span>
-                          <h3 className="text-left font-thin uppercase text-xs">
+                          <h3 className="text-left uppercase text-xs">
                             {item.name}
                           </h3>
                         </div>
-                        <div className="flex ml-1">
-                          <p className="text-xs text-main uppercase">
-                            {item.batch}
-                          </p>
-                        </div>
+                        <p className="text-xs text-main uppercase ml-1">
+                          {item.batch}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -155,7 +182,8 @@ const Internship = () => {
               )}
             </AnimatePresence>
 
-            <div className="hidden lg:flex justify-center md:justify-end gap-2 md:gap-3 mt-8 md:mt-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
+            {/* Pagination Dots */}
+            <div className="hidden lg:flex justify-center gap-2 mt-10">
               {tabs.map((item, index) => (
                 <button
                   key={index}
@@ -163,7 +191,7 @@ const Internship = () => {
                   className="flex flex-col items-center"
                 >
                   <span
-                    className={`text-xs sm:text-sm transition-colors duration-300 ${
+                    className={`text-xs transition-colors duration-300 ${
                       activeTabs === index
                         ? "text-main font-semibold"
                         : "text-main/40"
@@ -172,7 +200,7 @@ const Internship = () => {
                     {item}
                   </span>
                   <div
-                    className={`border-t-2 w-8 sm:w-10 md:w-12 transition-all duration-300 ${
+                    className={`border-t-2 w-8 transition-all duration-300 ${
                       activeTabs === index ? "border-main" : "border-main/40"
                     }`}
                   ></div>

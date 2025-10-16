@@ -6,11 +6,12 @@ const Contacts = () => {
   const p = "Reach out to us today—we're here to answer your questions, provide support, and explore opportunities together."
 
   return (
-    <div className='py-12 md:py-24 flex flex-col px-4 overflow-x-hidden'>
+    <div className='py-2  flex flex-col px-4 overflow-x-hidden'>
       <div className='mb-40'>
           <div className="flex items-center justify-center">
             <div className="w-8 md:w-16 border-t border-main"></div>
-            <span className="mx-2 md:mx-4 text-[12px] sm:text-sm md:text-lg text-main font-bold font-poppins">Contact us</span>
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
+              Contact us</span>
             <div className="w-8 md:w-16 border-t border-main"></div>
           </div>
 

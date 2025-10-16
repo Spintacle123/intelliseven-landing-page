@@ -9,7 +9,9 @@ import About from "./Components/About";
 
 import ProjectsSection from "./Components/ProjectSection";
 import WhyChoose from "./Components/WhyChoose";
-
+import Contacts from "./Components/Contacts";
+import Gallery from "./Components/Gallery"
+import Footer from "./Components/Footer"
 function App() {
   return (
     <>
@@ -19,8 +21,10 @@ function App() {
       <Cards />
       <IntelliText />
       <About />
-      <WhyChoose classnamme="" />
       <ProjectsSection />
+      <Gallery/>
+      <Contacts/>
+      <Footer/>
     </>
   );
 }

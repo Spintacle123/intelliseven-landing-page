@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className="">
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-20">
         <div className="mt-10 sm:mt-16 md:mt-20 max-w-2xl text-center px-4">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mb-4">
             <div className="w-16 border-t border-main"></div>
-            <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">
-              About us
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
+              About Us
             </span>
             <div className="w-16 border-t border-main"></div>
           </div>
@@ -16,7 +16,7 @@ const About = () => {
 
       <div className="h-full  px-4 sm:px-6">
         <div
-          className="justify-center max-w-sm md:max-w-md lg:max-w-4xl xl:max-w-6xl mx-auto mt-5 sm:mt-7 
+          className="justify-center max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto mt-5 sm:mt-7 
                 bg-white shadow-top-only rounded-2xl sm:rounded-[50px] md:rounded-[50px] p-5 sm:p-7 md:p-10 xl:p-14"
         >
           <div className="mb-6 sm:mb-8 md:mb-10 text-left justify-center">
@@ -29,9 +29,11 @@ const About = () => {
               throughout the project lifecycle. We strive to exceed expectations
               and drive success for our clients.
             </p>
-            <span className="text-main font-rajdhani font-semibold text-xs">
+            <div className="mt-3">
+              <span className="text-main font-rajdhani font-semibold text-lg py-4">
               <a href="">READ MORE...</a>
             </span>
+            </div>
           </div>
         </div>
 
@@ -62,7 +64,7 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               className="max-w-sm lg:max-w-full self-center justify-self-center lg:justify-self-end text-center lg:text-left lg:order-1"
             >
-              <h1 className="font-poppins text-lg font-medium text-[#878787] tracking-wider pb-4">
+              <h1 className="font-poppins text-lg font-semibold uppercase text-main tracking-wider pb-4">
                 Mission
               </h1>
               <p className="font-poppins text-sm sm:text-xs md:text-sm leading-relaxed">
@@ -83,7 +85,7 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               className="max-w-sm lg:max-w-full self-center justify-self-center lg:justify-self-end text-center lg:text-left lg:order-3"
             >
-              <h1 className="font-rajdhani text-lg font-medium text-[#878787] tracking-wider pb-4">
+              <h1 className="font-poppins text-lg font-semibold uppercase text-main tracking-wider pb-4">
                 Vision
               </h1>
               <p className="font-poppins text-sm sm:text-xs md:text-sm leading-relaxed">

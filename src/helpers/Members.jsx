@@ -2,9 +2,9 @@ export const Members = [
 
     /* Founders */
     {
-        name: "Gally Angeles",
         role: "CEO",
         joined: "Joined since 2019",
+        name: "Gally Angeles",
         type: "founders",
         description: "Meet Atty. Gally Angeles, our skilled lawyer and CEO who has led the company to exceptional growth and success, delivering comprehensive solutions to meet business needs.",
         src: '/Images/member1.png', 
@@ -39,7 +39,7 @@ export const Members = [
         type: "founders",
         joined: "Joined since 2019",
         description: "Meet Kim! Our exceptional Full Stack Developer tackles problems holistically with efficient, secure, and scalable solutions, thanks to his ability to work on both frontend and backend.",
-        src: 'https://www.intelliseven.com.ph/assets/saldivar-y4ppMnLV.png',
+        src: 'https://www.intelliseven.com.ph/assets/kim-lmBjNMba.jpeg',
     },
     {
         name: "Humphrey Chica",

@@ -10,7 +10,7 @@ export default function BackgroundFrame({ src, children }) {
           backgroundImage: `url(${src})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPosition: "50% 50%",
+          backgroundPosition: "50% 90%",
         }}
       />
 

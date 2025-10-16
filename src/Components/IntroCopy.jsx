@@ -22,14 +22,12 @@ const word = {
 export default function IntroCopy({
   text = "A showcase of the systems and solutions we've developed designed to streamline processes, improve efficiency, and deliver real value to businesses across industries.",
   className = "",
-  // behavior flags:
-  replayOnScroll = true, // <- set false if you only want it once
+  replayOnScroll = true, 
   viewportAmount = 0.25,
 }) {
   const words = text.trim().split(/\s+/);
   const controls = useAnimation();
 
-  // If you turn replayOnScroll off, we just rely on whileInView once
   const viewport = { once: !replayOnScroll, amount: viewportAmount };
 
   useEffect(() => {
@@ -37,17 +35,28 @@ export default function IntroCopy({
   }, [replayOnScroll, controls]);
 
   return (
+    <div>
+        <div className="flex justify-center mb-20">
+        <div className="mt-10 sm:mt-16 md:mt-20 max-w-2xl text-center px-4">
+          <div className="flex items-center justify-center mb-4">
+            <div className="w-16 border-t border-white"></div>
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-white font-bold font-poppins">
+              About Us
+            </span>
+            <div className="w-16 border-t border-white"></div>
+          </div>
+        </div>
+      </div>
     <div
       className={`flex justify-center mx-auto max-w-6xl py-8 sm:py-10 mb-10 sm:mb-16 px-4 ${className}`}
-    >
+    >      
       <motion.p
-        className="text-[18px] sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl text-center text-white font-poppins font-light leading-relaxed"
+        className="text-[18px] sm:text-xl md:text-2xl lg:text-3 xl xl:text-4xl text-center text-white font-poppins font-light leading-relaxed"
         variants={container}
         initial="hidden"
         animate={controls}
         whileInView="visible"
         viewport={viewport}
-        // when it leaves the viewport, reset so it can replay on re-entry
         onViewportLeave={() => {
           if (replayOnScroll) controls.start("hidden");
         }}
@@ -60,6 +69,7 @@ export default function IntroCopy({
           ))}
         </span>
       </motion.p>
+    </div>
     </div>
   );
 }

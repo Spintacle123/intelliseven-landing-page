@@ -3,7 +3,7 @@ import TextScroll from "./TextScroll";
 import Internship from "./Internship";
 import TeamMember from "./TeamMember";
 import { motion } from "framer-motion";
-import Gallery from "./gallery"
+
 import Contacts from "./Contacts";
 import Footer from "./Footer";
 const Projects = () => {
@@ -60,7 +60,7 @@ const Projects = () => {
                <div className='grid md:grid-cols-1 lg:grid-cols-3 justify-items-center'>
                 {projects.map((item) => (
                    <div className='mt-7 bg-white shadow-top-only rounded-3xl py-7 px-6 mb-4 max-w-xs'>
-                       <div>
+                       <div>  
                         <div className='flex gap-4 justify-start -space-x-3 mb-2'>
                            <span className="text-main">
                             {item.icon}

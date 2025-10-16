@@ -41,7 +41,6 @@
   }
 }
 
-/* 6) Local fonts (ok here, after imports) */
 @font-face {
   font-family: "Cocogoose";
   src: url("/fonts/Cocogoose-Pro-Regular-trial.ttf") format("truetype");
@@ -91,3 +90,14 @@
   animation: bgMove 18s ease-in-out infinite;
   will-change: transform;
 }
+@media (min-width: 1440px) {
+  .custom-1200\:pt-\[60svh\] {
+    padding-top: 10svh;
+  }
+}
+@media (min-width: 114px) {
+  .custom-1200\:pt-\[60svh\] {
+    padding-top: 4svh;
+  }
+}
+

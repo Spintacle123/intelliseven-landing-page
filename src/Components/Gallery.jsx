@@ -48,14 +48,14 @@
       <div className="py-20 px-4">
         <div className="max-w-5xl flex justify-center items-center mx-auto mb-8">
           <div className="w-16 border-t-2 border-main"></div>
-          <span className="mx-4 text-[12px] sm:text-sm md:text-lg  text-main font-bold font-poppins">
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
             Gallery Memories of IntelliSeven
           </span>
           <div className="w-16 border-t-2 border-main"></div>
         </div>
 
         <div className="flex justify-center mx-auto mb-16">
-          <h1 className="text-3xl md:text-4xl text-main font-rajdhani text-center px-4">
+          <h1 className="text-3xl md:text-3xl text-main font-rajdhani text-center px-4">
             A Visual Journey Through Creativity and Innovation
           </h1>
         </div>

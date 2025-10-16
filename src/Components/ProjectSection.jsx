@@ -5,6 +5,7 @@ import IntroCopy from "./IntroCopy";
 import ProjectsTabs from "./ProjectTabs";
 import { motion } from "framer-motion";
 import TeamMember from "./TeamMember";
+import WhyChoose from "./WhyChoose";
 
 const Shape = ({ src, top, left, size, speed }) => (
   <motion.img
@@ -30,15 +31,14 @@ export default function ProjectsSection() {
   return (
     <BackgroundFrame src="/Images/bg-mid.png" ratio={2.805} position="50% 42%">
       {/* ====================== FLOATING SHAPES ====================== */}
-      {/* Deeper anchor for particles */}
       <div
         className="absolute left-0 right-0 -z-0 project-shapes-layer"
         style={{
-          top: "90svh", // mobile position
+          top: "90svh", 
           height: "100svh",
         }}
       >
-        {/* Desktop-only deeper offset */}
+        
         <style>{`
           @media (min-width: 768px) {
             .project-shapes-layer {
@@ -47,22 +47,21 @@ export default function ProjectsSection() {
           }
           @media (min-width: 1024px) {
             .project-shapes-layer {
-              top: 90svh !important;
+              top: 80svh !important;
             }
           }
           @media (min-width: 1536px) {
             .project-shapes-layer {
-              top: 120svh !important;
+              top: 180svh !important;
             }
           }
         `}</style>
 
-        {/* LEFT SIDE */}
         <Shape
           src="/Images/animation1.png"
           top="25%"
           left="6%"
-          size="clamp(80px,14vw,220px)"
+          size="clamp(200px,14vw,220px)"
           speed={25}
         />
         <Shape
@@ -73,7 +72,6 @@ export default function ProjectsSection() {
           speed={30}
         />
 
-        {/* RIGHT SIDE */}
         <Shape
           src="/Images/animation3.png"
           top="35%"
@@ -91,21 +89,23 @@ export default function ProjectsSection() {
       </div>
 
       {/* ====================== CONTENT AREA ====================== */}
-      <div className="relative pt-[70svh] md:pt-[65svh] lg:pt-[50svh] xl:pt-[80svh] pb-[8svh] md:pb-[10svh]">
+        <div className="relative pt-[70svh] md:pt-[65svh] lg:[20svh] xl:pt-[10svh] 2xl:[20vsh]  ">
+         <WhyChoose/>
+      <div className="relative pt-[70svh] md:pt-[65svh] lg:[20svh] xl:pt-[10svh] 2xl:[20vsh]  ">
+        </div>
         <IntroCopy text={intro} />
 
-        {/* Adjusted spacing between intro and tabs */}
-        <div className="mt-[14svh] md:mt-[18svh] lg:mt-[20svh] xl:mt-[30svh]">
+        <div className="mt-[14svh] md:mt-[18svh] lg:mt-[2svh] xl:mt-[10svh] 2xl:mt-[30svh] custom-1200:pt-[20svh] ">
           <ProjectsTabs />
         </div>
 
-        <div className="mt-[30svh] md:mt-[40svh] lg:mt-[40svh] xl:mt-[80svh]">
+        <div className="mt-[30svh] md:mt-[40svh]  lg:mt-[40vsh] xl:mt-[30svh] 2xl:mt-[25svh] ">
           <Internship />
         </div>
-        <div className="mt-[30svh] md:mt-[45svh] lg:mt-[40svh] xl:mt-[80svh]">
+        <div className="mt-[30svh] md:mt-[45svh] lg:mt-[2svh] xl:mt-[60svh]">
           <TeamMember />
         </div>
-      </div>
+          </div>
     </BackgroundFrame>
   );
 }
