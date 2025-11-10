@@ -34,11 +34,10 @@ export default function ProjectsSection() {
       <div
         className="absolute left-0 right-0 -z-0 project-shapes-layer"
         style={{
-          top: "90svh", 
+          top: "90svh", // mobile position
           height: "100svh",
         }}
       >
-        
         <style>{`
           @media (min-width: 768px) {
             .project-shapes-layer {
@@ -47,21 +46,22 @@ export default function ProjectsSection() {
           }
           @media (min-width: 1024px) {
             .project-shapes-layer {
-              top: 80svh !important;
+              top: 90svh !important;
             }
           }
           @media (min-width: 1536px) {
             .project-shapes-layer {
-              top: 180svh !important;
+              top: 80svh !important;
             }
           }
         `}</style>
 
+        {/* LEFT SIDE */}
         <Shape
           src="/Images/animation1.png"
           top="25%"
           left="6%"
-          size="clamp(200px,14vw,220px)"
+          size="clamp(80px,14vw,220px)"
           speed={25}
         />
         <Shape
@@ -72,6 +72,7 @@ export default function ProjectsSection() {
           speed={30}
         />
 
+        {/* RIGHT SIDE */}
         <Shape
           src="/Images/animation3.png"
           top="35%"
@@ -89,23 +90,22 @@ export default function ProjectsSection() {
       </div>
 
       {/* ====================== CONTENT AREA ====================== */}
-        <div className="relative pt-[70svh] md:pt-[65svh] lg:[20svh] xl:pt-[10svh] 2xl:[20vsh]  ">
-         <WhyChoose/>
-      <div className="relative pt-[70svh] md:pt-[65svh] lg:[20svh] xl:pt-[10svh] 2xl:[20vsh]  ">
-        </div>
+      <div className="relative  pt-0 md:pt-[0svh] lg:pt-0 lg:pb-0 xl:pt-[4svh] 2xl:pt-[0svh]"></div>
+      <WhyChoose />
+      <div className="relative pt-[5svh] md:pt-[0svh] ">
         <IntroCopy text={intro} />
+      </div>
+      <div />
+      <div className="mt-[14svh] md:mt-0  lg:mt-[20svh] xl:mt-[30svh] 2xl:mt-[30svh] custom-1800:pt-0">
+        <ProjectsTabs />
+      </div>
 
-        <div className="mt-[14svh] md:mt-[18svh] lg:mt-[2svh] xl:mt-[10svh] 2xl:mt-[30svh] custom-1200:pt-[20svh] ">
-          <ProjectsTabs />
-        </div>
-
-        <div className="mt-[30svh] md:mt-[40svh]  lg:mt-[40vsh] xl:mt-[30svh] 2xl:mt-[25svh] ">
-          <Internship />
-        </div>
-        <div className="mt-[30svh] md:mt-[45svh] lg:mt-[2svh] xl:mt-[60svh]">
-          <TeamMember />
-        </div>
-          </div>
+      <div className="mt-[10svh] md:mt-[20svh]  xl:mt-[0svh] 2xl:mt-[90svh]  custom-1840:pt-[30svh]">
+        <Internship />
+      </div>
+      <div className="mt-[30svh]  md:mt-[26svh] lg:mt-[40svh] xl:mt-[50svh] 2xl:mt-[90svh]  ">
+        <TeamMember />
+      </div>
     </BackgroundFrame>
   );
 }

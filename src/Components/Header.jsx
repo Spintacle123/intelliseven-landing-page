@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -124,16 +123,26 @@ const Header = () => {
 
         <nav>
           <div className="absolute top-20 xl:top-25 right-0 lg:right-1 z-40">
-            
             <div className="hidden lg:flex px-35 xl:px-40 py-6 font-semibold bg-main text-xs gap-15 xl:gap-20 text-white font-regular clip-left-slant">
-              <a href="#home" className="hover:opacity-80 transition-opacity">Home</a>
-              <a href="#services" className="hover:opacity-80 transition-opacity">Services</a>
-              <a href="#about" className="hover:opacity-80 transition-opacity">About Us</a>
-              <a href="#team" className="hover:opacity-80 transition-opacity">Meet Our Team</a>
-              <a href="#docs" className="hover:opacity-80 transition-opacity">Documentation</a>
-
+              <a href="#home" className="hover:opacity-80 transition-opacity">
+                Home
+              </a>
+              <a
+                href="#services"
+                className="hover:opacity-80 transition-opacity"
+              >
+                Services
+              </a>
+              <a href="#about" className="hover:opacity-80 transition-opacity">
+                About Us
+              </a>
+              <a href="#team" className="hover:opacity-80 transition-opacity">
+                Meet Our Team
+              </a>
+              <a href="#docs" className="hover:opacity-80 transition-opacity">
+                Documentation
+              </a>
             </div>
-            
           </div>
           <AnimatePresence>
             {isOpen && (
@@ -143,8 +152,7 @@ const Header = () => {
                 exit={{ opacity: 0, y: -20 }}
                 className="fixed inset-0 bg-main to-20% z-40 flex flex-col items-center justify-center space-y-6"
               >
-              
-          <img
+                <img
                   src="./Images/logo2.png"
                   alt="Logo 2"
                   className="absolute top-6 left-6 w-[180px] h-auto object-contain"
@@ -171,7 +179,7 @@ const Header = () => {
                     />
                   </svg>
                 </button>
-              
+
                 {navItems.map((item, index) => (
                   <motion.a
                     key={item}
@@ -187,7 +195,6 @@ const Header = () => {
                   </motion.a>
                 ))}
               </motion.div>
-
             )}
           </AnimatePresence>
         </nav>

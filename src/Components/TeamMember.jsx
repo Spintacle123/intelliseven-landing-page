@@ -8,7 +8,7 @@ const TeamMember = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
-  const [selectedImage, setSelectedImage] = useState(null); // 👈 fullscreen image state
+  const [selectedImage, setSelectedImage] = useState(null);
   const componentRef = useRef(null);
 
   const tabs = [
@@ -20,7 +20,6 @@ const TeamMember = () => {
   const developers = Members.filter((m) => m.type === "developers");
   const currentGroup = activeTabs === 0 ? founders : developers;
 
-  // ✅ Detect when component is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -34,14 +33,12 @@ const TeamMember = () => {
     return () => observer.disconnect();
   }, []);
 
-  // ✅ Detect screen resize for mobile check
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 640);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ✅ Autoplay logic
   useEffect(() => {
     if (!isAutoPlaying || !isInView) return;
     const interval = setInterval(() => {
@@ -54,7 +51,8 @@ const TeamMember = () => {
           return prev + step;
         } else {
           if (prev === currentGroup.length - 1) return 0;
-          if (prev + step >= currentGroup.length) return currentGroup.length - 1;
+          if (prev + step >= currentGroup.length)
+            return currentGroup.length - 1;
           return prev + step;
         }
       });
@@ -69,7 +67,6 @@ const TeamMember = () => {
     setTimeout(() => setIsAutoPlaying(true), 700);
   };
 
-  // ✅ Handle visible members
   let visibleMembers;
   if (isMobile) {
     visibleMembers = [currentGroup[currentIndex]];
@@ -86,12 +83,12 @@ const TeamMember = () => {
 
   return (
     <div ref={componentRef}>
-      <div className="max-w-6xl justify-center mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
+      <div className="max-w-6xl custom-1800:max-w-5xl justify-center mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-8 lg:gap-0">
           {/* ==== LEFT SIDE ==== */}
           <div className="space-y-3 w-full lg:w-70 mt-8 lg:mt-20">
             <div className="flex items-center flex-col md:items-start space-y-3">
-              <h2 className="text-4xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-4xl custom-1800:text-8xl bg-gradient-to-r from-[#BB3232] to-[#616161] bg-clip-text text-transparent">
                 Meet our Team
               </h2>
               <h3 className="text-xs sm:text-sm text-black/80">
@@ -146,21 +143,17 @@ const TeamMember = () => {
               className={`flex ${
                 visibleMembers.length === 1
                   ? "justify-center"
-                  : "justify-center gap-3 sm:gap-8 lg:gap-10 xl:gap-20"
+                  : "justify-center gap-3 sm:gap-8 lg:gap-10 xl:gap-20 custom-1800:gap-24"
               }`}
             >
               {visibleMembers.map((item, index) => (
                 <div
                   key={`${currentIndex}-${index}-${item.name}`}
                   className={`${
-                    isMobile
-                      ? "w-72 h-[480px]"
-                      : "w-36 sm:w-52 lg:w-64"
+                    isMobile ? "w-72 h-[480px]" : "w-36 sm:w-52 lg:w-64"
                   } mx-auto flex-shrink-0 ${
-                    !isMobile &&
-                    visibleMembers.length === 2 &&
-                    index % 2 === 1
-                      ? "mt-10 sm:mt-16 lg:mt-20"
+                    !isMobile && visibleMembers.length === 2 && index % 2 === 1
+                      ? "mt-10 sm:mt-16 lg:mt-20 custom-1800:mt-24"
                       : ""
                   }`}
                   style={{
@@ -173,7 +166,7 @@ const TeamMember = () => {
                     className={`absolute border-white ${
                       isMobile
                         ? "h-[350px] w-72"
-                        : "h-90 sm:h-90 lg:h-80 xl:h-96 w-36 sm:w-52 lg:w-[250px]"
+                        : "h-90 sm:h-90 lg:h-80 xl:h-[400px] custom-1800:h-[500px] w-36 sm:w-52 lg:w-[250px] xl:2-[300px] custom-1800:w-80"
                     } bg-white rounded-3xl shadow-lg`}
                   >
                     <img
@@ -183,7 +176,7 @@ const TeamMember = () => {
                       className={`cursor-pointer transition-transform duration-300 hover:scale-105 ${
                         isMobile
                           ? "h-[280px] w-full object-contain"
-                          : "h-44 sm:h-60 lg:h-60 xl:h-72 w-full object-contain"
+                          : "h-44 sm:h-60 lg:h-60 xl:h-72 custom-1800:h-96 w-full object-contain"
                       }`}
                     />
                     <span className="text-[9px] sm:text-xs text-white rotate-90 absolute top-14 sm:top-20 lg:top-24 bg-[#BB3232] p-1 sm:p-2 rounded-3xl -right-8 sm:-right-12 lg:-right-14">
@@ -196,19 +189,19 @@ const TeamMember = () => {
                     className={`relative ${
                       isMobile
                         ? "top-[230px] w-72 -left-10 lg:left-0"
-                        : "top-28 sm:top-40 -left-20 lg:top-40 xl:top-54 w-44 sm:w-64 lg:w-[250px] xl:w-[300px]"
+                        : "top-28 sm:top-40 -left-20 lg:top-40 xl:top-54 custom-1800:top-72 w-44 sm:w-64 lg:w-[250px] xl:w-[300px] custom-1800:w-96"
                     } bg-white rounded-2xl shadow-md mt-4`}
                   >
-                    <div className="p-3 sm:p-4 lg:p-5">
-                      <p className="text-[13px] sm:text-xs lg:text-sm text-[#AAAAAA] font-poppins leading-tight sm:leading-normal">
+                    <div className="p-3 sm:p-4 lg:p-5 custom-1800:p-7">
+                      <p className="text-[13px] sm:text-xs lg:text-sm custom-1800:text-base text-[#AAAAAA] font-poppins leading-tight sm:leading-normal custom-1800:leading-relaxed">
                         {item.description}
                       </p>
                     </div>
-                    <div className="p-2 sm:p-2 sm:px-6 lg:px-8 bg-[#BB3232] rounded-b-2xl">
-                      <h3 className="font-poppins text-white text-[13px] sm:text-sm leading-tight">
+                    <div className="p-2 sm:p-2 sm:px-6 lg:px-8 custom-1800:px-10 custom-1800:py-4 bg-[#BB3232] rounded-b-2xl">
+                      <h3 className="font-poppins text-white text-[13px] sm:text-sm custom-1800:text-lg leading-tight">
                         {item.name}
                       </h3>
-                      <span className="text-[10px] sm:text-xs lg:text-sm font-poppins font-thin text-white">
+                      <span className="text-[10px] sm:text-xs lg:text-sm custom-1800:text-sm font-poppins font-thin text-white">
                         {item.role}
                       </span>
                     </div>

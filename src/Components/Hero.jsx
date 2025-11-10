@@ -124,7 +124,9 @@ const Hero = () => {
               }}
               className="block text-center md:text-4xl lg:text-5xl xl:text-7xl text-gray-300"
             >
-              <span className="text-[#e5c397] ">your</span> <span className="italic text-black text-df">Business</span> <span className="text-[#e5c397] ">is</span>
+              <span className="text-[#e5c397] ">your</span>{" "}
+              <span className="italic text-black text-df">Business</span>{" "}
+              <span className="text-[#e5c397] ">is</span>
             </motion.span>
 
             <motion.span
@@ -138,11 +140,10 @@ const Hero = () => {
               }}
               className="mt-2 block md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-[#D8A4A4] to-[#BB3232] bg-clip-text text-transparent"
             >
-             <span className="text-[#e5c397] ">our</span> <span className="italic">Business.</span>
+              <span className="text-[#e5c397] ">our</span>{" "}
+              <span className="italic">Business.</span>
             </motion.span>
           </h1>
-
-
         </motion.div>
 
         <motion.div
@@ -161,7 +162,19 @@ const Hero = () => {
               }}
               src="/Images/Hero.png"
               alt="Hero"
-              className="w-auto object-contain object-bottom h-[540px] md:h-[620px] lg:h-[600px] xl:h-[720px] 2xl:h-[700px]"
+              className="w-auto object-contain object-bottom "
+              style={{
+                height:
+                  window.innerWidth >= 1800
+                    ? "900px"
+                    : window.innerWidth >= 1280
+                    ? "720px"
+                    : window.innerWidth >= 1024
+                    ? "600px"
+                    : window.innerWidth >= 768
+                    ? "620px"
+                    : "540px",
+              }}
             />
 
             <motion.div

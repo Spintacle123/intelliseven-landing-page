@@ -90,14 +90,9 @@
   animation: bgMove 18s ease-in-out infinite;
   will-change: transform;
 }
-@media (min-width: 1440px) {
-  .custom-1200\:pt-\[60svh\] {
-    padding-top: 10svh;
-  }
+@theme {
+  --breakpoint-custom-1400: 1400px;
+  --breakpoint-custom-1600: 1600px;
+  --breakpoint-custom-1800: 1800px;
+  --breakpoint-custom-2000: 2000px;
 }
-@media (min-width: 114px) {
-  .custom-1200\:pt-\[60svh\] {
-    padding-top: 4svh;
-  }
-}
-
