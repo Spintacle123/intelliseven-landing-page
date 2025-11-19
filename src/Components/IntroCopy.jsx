@@ -36,19 +36,19 @@ export default function IntroCopy({
 
   return (
     <div>
-      <div className="flex justify-center mb-20">
+      <div className="flex justify-center mb-10">
         <div className="mt-10 sm:mt-16 md:mt-20 max-w-2xl text-center px-4">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 border-t border-main"></div>
-            <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
-              About Us
-            </span>
-            <div className="w-16 border-t border-main"></div>
-          </div>
+        <div className="flex items-center justify-center">
+          <div className="w-16 border-t border-main"></div>
+          <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
+            Projects that we have
+          </span>
+          <div className="w-16 border-t border-main"></div>
+        </div>
         </div>
       </div>
       <div
-        className={`flex justify-center mx-auto max-w-6xl py-8 sm:py-10 mb-10 sm:mb-16 px-4 ${className}`}
+        className={`flex justify-center mx-auto max-w-5xl py-8 sm:py-2 px-4 ${className}`}
       >
         <motion.p
           className="text-[18px] sm:text-xl md:text-2xl lg:text-3 xl xl:text-4xl text-center text-white font-poppins font-light leading-relaxed"

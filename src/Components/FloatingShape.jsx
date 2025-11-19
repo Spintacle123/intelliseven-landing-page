@@ -16,7 +16,7 @@ const FloatingShape = ({ src, top, left, width, height, rotateSpeed }) => {
     pointerEvents: "none",
   }}
   animate={{
-        rotate: [0, 360],
+    rotate: [0, 360],
     x: [0, 2, -2, 3, -1, 0], 
     y: [0, -4, 2, -6, 3, 0], 
     scale: [1, 1.01, 0.99, 1.01, 1],

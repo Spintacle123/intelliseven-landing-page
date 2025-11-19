@@ -38,7 +38,7 @@ const Hero = () => {
       style={{ backgroundImage: "url('/Images/bg-building.png')" }}
     >
       {/* ========== MOBILE ========== */}
-      <div className="md:hidden flex min-h-screen flex-col items-center justify-start px-5 pt-16">
+      <div   className="md:hidden flex min-h-screen flex-col items-center justify-start px-5 pt-16">
         <motion.h1
           variants={textAnimations}
           initial="hidden"
@@ -100,9 +100,9 @@ const Hero = () => {
       </div>
 
       {/* ========== DESKTOP ========== */}
-      <div className="hidden md:flex relative h-screen w-full items-center justify-center">
+      <div     id="home" className="hidden md:flex relative h-screen w-full items-center justify-center">
         <motion.div
-          initial={backgroundOverlay.initial}
+          initial={backgroundOverlay.initial} 
           animate={backgroundOverlay.animate}
           transition={{ duration: animationTimings.desktop.background }}
           className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/20 pointer-events-none"
@@ -110,7 +110,7 @@ const Hero = () => {
 
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
-          className="absolute left-1/2 top-1/2 -translate-y-1/2 z-20 -translate-x-[320px] md:-translate-x-[340px] lg:-translate-x-[400px] xl:-translate-x-[550px] 2xl:-translate-x-[550px] max-w-[720px] px-2"
+          className="absolute left-1/2 top-1/2 -translate-y-1/2 z-20 -translate-x-[320px] md:-translate-x-[340px] lg:-translate-x-[400px] xl:-translate-x-[550px] 2xl:-translate-x-[550px] max-w-[720px] xl:max-w-[820px]  xl:max-w-[800px] px-2"
         >
           <h1 className="font-poppins font-medium leading-tight">
             <motion.span
@@ -122,7 +122,7 @@ const Hero = () => {
                 delay: animationTimings.desktop.delays.firstLine,
                 ease: "easeOut",
               }}
-              className="block text-center md:text-4xl lg:text-5xl xl:text-7xl text-gray-300"
+              className="block text-center md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-7xl text-gray-300"
             >
               <span className="text-[#e5c397] ">your</span>{" "}
               <span className="italic text-black text-df">Business</span>{" "}
@@ -138,7 +138,7 @@ const Hero = () => {
                 delay: animationTimings.desktop.delays.secondLine,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 block md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-[#D8A4A4] to-[#BB3232] bg-clip-text text-transparent"
+              className="mt-2 block md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl bg-gradient-to-r from-[#D8A4A4] to-[#BB3232] bg-clip-text text-transparent"
             >
               <span className="text-[#e5c397] ">our</span>{" "}
               <span className="italic">Business.</span>
@@ -165,12 +165,14 @@ const Hero = () => {
               className="w-auto object-contain object-bottom "
               style={{
                 height:
-                  window.innerWidth >= 1800
-                    ? "900px"
+                  window.innerWidth >= 1920
+                    ? "850px"
+                    : window.innerWidth >= 1800
+                    ? "750px"
                     : window.innerWidth >= 1280
                     ? "720px"
                     : window.innerWidth >= 1024
-                    ? "600px"
+                    ? "580px"
                     : window.innerWidth >= 768
                     ? "620px"
                     : "540px",

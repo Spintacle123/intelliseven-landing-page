@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 const About = () => {
   return (
-    <div className="">
-      <div className="flex justify-center mb-20">
+    <div id="about" className="">
+      <div  className="flex justify-center mb-20">
         <div className="mt-10 sm:mt-16 md:mt-20 max-w-2xl text-center px-4">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 border-t border-main"></div>
+          <div className="flex items-center justify-center">
+          <div className="w-16 border-t border-main"></div>
           <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
-              About Us
-            </span>
-            <div className="w-16 border-t border-main"></div>
-          </div>
+            About
+          </span>
+          <div className="w-16 border-t border-main"></div>
+        </div>
         </div>
       </div>
 
@@ -20,7 +20,7 @@ const About = () => {
                 bg-white shadow-top-only rounded-2xl sm:rounded-[50px] md:rounded-[50px] p-5 sm:p-7 md:p-10 xl:p-14"
         >
           <div className="mb-6 sm:mb-8 md:mb-10 text-left justify-center">
-            <p className="font-poppins  text-sm sm:text-xs md:text-[20px] leading-relaxed">
+            <p className="font-poppins  text-sm sm:text-xs lg:text-[10px] lg:text-[20px] leading-relaxed">
               Intelliseven is an innovative IT company dedicated to providing
               comprehensive and tailored solutions to meet the evolving needs of
               businesses. Our team of experienced professionals utilizes the
@@ -62,12 +62,12 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="max-w-sm lg:max-w-full self-center justify-self-center lg:justify-self-end text-center lg:text-left lg:order-1"
+              className="max-w-sm lg:max-w-full bg-main rounded-2xl p-4 self-center justify-self-center lg:justify-self-end text-center lg:text-left lg:order-1"
             >
-              <h1 className="font-poppins text-lg font-semibold uppercase text-main tracking-wider pb-4">
+              <h1 className="font-poppins text-lg font-semibold uppercase text-white tracking-wider pb-4">
                 Mission
               </h1>
-              <p className="font-poppins text-sm sm:text-xs md:text-sm leading-relaxed">
+              <p className="font-poppins text-white  font-normal text-sm sm:text-xs md:text-sm leading-6">
                 At IntelliSeven Solutions Inc., our mission is to empower
                 businesses in the Philippines and beyond by delivering
                 comprehensive IT solutions and services that drive digital
@@ -83,12 +83,12 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="max-w-sm lg:max-w-full self-center justify-self-center lg:justify-self-end text-center lg:text-left lg:order-3"
+              className="max-w-sm lg:max-w-full bg-main rounded-2xl p-4 self-center justify-self-center lg:justify-self-end text-center lg:text-left lg:order-3"
             >
-              <h1 className="font-poppins text-lg font-semibold uppercase text-main tracking-wider pb-4">
+              <h1 className="font-poppins text-lg font-semibold uppercase text-white tracking-wider pb-4">
                 Vision
               </h1>
-              <p className="font-poppins text-sm sm:text-xs md:text-sm leading-relaxed">
+              <p className="font-poppins text-white font-normal text-sm sm:text-xs md:text-sm leading-6">
                 Our vision is to be the premier provider of innovative and
                 transformative IT solutions, empowering businesses in the
                 Philippines and globally to thrive in the digital age. We aspire

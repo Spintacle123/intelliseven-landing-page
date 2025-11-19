@@ -7,18 +7,11 @@ import { motion } from "framer-motion";
 import TeamMember from "./TeamMember";
 import WhyChoose from "./WhyChoose";
 
-const Shape = ({ src, top, left, size, speed }) => (
+const Shape = ({ src, className, speed }) => (
   <motion.img
     src={src}
     alt=""
-    className="absolute pointer-events-none select-none"
-    style={{
-      top,
-      left,
-      width: size,
-      height: size,
-      transform: "translate(-50%, -50%)",
-    }}
+    className={`absolute pointer-events-none select-none ${className}`}
     animate={{ rotate: 360 }}
     transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
   />
@@ -31,81 +24,54 @@ export default function ProjectsSection() {
   return (
     <BackgroundFrame src="/Images/bg-mid.png" ratio={2.805} position="50% 42%">
       {/* ====================== FLOATING SHAPES ====================== */}
-      <div
-        className="absolute left-0 right-0 -z-0 project-shapes-layer"
-        style={{
-          top: "90svh", // mobile position
-          height: "100svh",
-        }}
-      >
-        <style>{`
-          @media (min-width: 768px) {
-            .project-shapes-layer {
-              top: 150svh !important;
-            }
-          }
-          @media (min-width: 1024px) {
-            .project-shapes-layer {
-              top: 90svh !important;
-            }
-          }
-          @media (min-width: 1536px) {
-            .project-shapes-layer {
-              top: 80svh !important;
-            }
-          }
-        `}</style>
-
+      <div className="absolute inset-x-0 -z-0 top-[140vh] md:top-[80vh] lg:top-[90vh] h-screen">
         {/* LEFT SIDE */}
         <Shape
           src="/Images/animation1.png"
-          top="25%"
-          left="6%"
-          size="clamp(80px,14vw,220px)"
+          className="top-[25%] left-[6%] w-[clamp(100px,12vw,220px)] -translate-x-1/2 -translate-y-1/2"
           speed={25}
         />
         <Shape
           src="/Images/animation2.png"
-          top="60%"
-          left="10%"
-          size="clamp(160px,22vw,360px)"
+          className="top-[60%] left-[10%] w-[clamp(160px,22vw,360px)] -translate-x-1/2 -translate-y-1/2"
           speed={30}
         />
 
         {/* RIGHT SIDE */}
         <Shape
           src="/Images/animation3.png"
-          top="35%"
-          left="78%"
-          size="clamp(90px,10vw,200px)"
+          className="top-[35%] left-[78%] w-[clamp(90px,10vw,200px)] -translate-x-1/2 -translate-y-1/2"
           speed={18}
         />
         <Shape
-          src="/Images/animation4.png"
-          top="75%"
-          left="86%"
-          size="clamp(160px,22vw,360px)"
+          src="/Images/animation4.png"a
+          className="top-[75%] left-[86%] w-[clamp(160px,22vw,360px)] -translate-x-1/2 -translate-y-1/2"
           speed={22}
         />
       </div>
 
       {/* ====================== CONTENT AREA ====================== */}
-      <div className="relative  pt-0 md:pt-[0svh] lg:pt-0 lg:pb-0 xl:pt-[4svh] 2xl:pt-[0svh]"></div>
-      <WhyChoose />
-      <div className="relative pt-[5svh] md:pt-[0svh] ">
-        <IntroCopy text={intro} />
-      </div>
-      <div />
-      <div className="mt-[14svh] md:mt-0  lg:mt-[20svh] xl:mt-[30svh] 2xl:mt-[30svh] custom-1800:pt-0">
-        <ProjectsTabs />
-      </div>
+        <div className="relative space-y-2 md:space-y-1 lg:space-y-2 xl:space-y-20">
+          <div className="xl:pt-16">
+            <WhyChoose />
+          </div>
 
-      <div className="mt-[10svh] md:mt-[20svh]  xl:mt-[0svh] 2xl:mt-[90svh]  custom-1840:pt-[30svh]">
-        <Internship />
-      </div>
-      <div className="mt-[30svh]  md:mt-[26svh] lg:mt-[40svh] xl:mt-[50svh] 2xl:mt-[90svh]  ">
-        <TeamMember />
-      </div>
+          <div className="pt-5 md:pt-0">
+            <IntroCopy text={intro} />
+          </div>
+
+          <div className="pt-14 md:pt-0 lg:pt-2 xl:pt-32">
+            <ProjectsTabs />
+          </div>
+
+          <div className="pt-10 md:pt-1 lg:pt-0 xl:pt-20 2xl:pt-52">
+            <Internship />
+          </div>
+
+          <div id="team" className="pt-30 md:pt-20 lg:pt-30 xl:pt-72 2xl:pt-72">
+            <TeamMember />
+          </div>
+        </div>  
     </BackgroundFrame>
   );
 }

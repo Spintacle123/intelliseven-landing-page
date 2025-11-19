@@ -13,7 +13,7 @@ export default function ProjectsTabs({
         `One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.`,
       comment:
         "He found himself transformed in his bed into a horrible vermin.",
-      button: "EXPLORE MORE ABOUT HRIS SYSTEM",
+      button: "Learn more",
       src: "/Images/HRIS.png",
       icon: "/icons/Calendar.png",
       icon2: "/icons/coin.png",
@@ -26,7 +26,7 @@ export default function ProjectsTabs({
       description:
         "Advanced time tracking and HR management system for modern businesses.",
       comment: "Streamline your workforce management efficiently.",
-      button: "EXPLORE MORE ABOUT iTimeHR",
+       button: "Learn more",
       src: "/Images/HRIS.png",
       icon: "/icons/Calendar.png",
       icon2: "/icons/coin.png",
@@ -39,7 +39,7 @@ export default function ProjectsTabs({
       description:
         "Mobile-first legal system management platform for on-the-go professionals.",
       comment: "Access your legal systems anywhere, anytime.",
-      button: "EXPLORE MORE ABOUT HRIS LAWSYS MOBILE",
+      button: "Learn more",
       src: "/Images/HRIS.png",
       icon: "/icons/Calendar.png",
       icon2: "/icons/coin.png",
@@ -57,7 +57,7 @@ export default function ProjectsTabs({
             <button
               onClick={() => setActive(index)}
               className={`w-full flex flex-col items-end transition-all duration-300 cursor-pointer ${
-                active === index ? "text-white" : "text-white/50"
+                 active === index ? "text-white" : "text-white/50"
               }`}
             >
               <motion.span
@@ -67,7 +67,7 @@ export default function ProjectsTabs({
                 }}
                 transition={{ duration: 0.25 }}
                 className={`text-xs sm:text-sm mb-1 sm:mb-2 ${
-                  active === index ? "text-white/60" : "text-white"
+                 active === index ? "text-white" : "text-white/50"
                 }`}
               >
                 {item.number}
@@ -87,7 +87,7 @@ export default function ProjectsTabs({
                 }}
                 transition={{ duration: 0.25 }}
                 className={`text-white text-[10px] sm:text-xs md:text-sm font-medium ${
-                  active === index ? "text-white/60" : "text-white"
+                   active === index ? "text-white" : "text-white/50"
                 }`}
               >
                 {item.title}
@@ -97,7 +97,7 @@ export default function ProjectsTabs({
         ))}
       </div>
 
-      {/* Active tab content */}
+      {/* tab */}
       <div className="mt-8">
         <div className=" max-w-3xl md:max-w-3xl lg:max-w-3xl xl:max-w-6xl items-center mx-auto">
           <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
@@ -131,7 +131,7 @@ export default function ProjectsTabs({
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.35 }}
-              className="md:mt-20 text-center  justify-center mx-auto lg:max-w-full space-y-4sm:space-y-4 md:space-y-5"
+              className="md:mt-20 text-center lg:text-start  justify-center mx-auto lg:max-w-[250px] space-y-4 sm:space-y-4 md:space-y-5"
             >
               <h1 className="text-white font-medium text-xl sm:text-2xl md:text-2xl lg:text-4xl">
                 {tabs[active].projectName}
@@ -144,7 +144,7 @@ export default function ProjectsTabs({
               <p className="text-[11px] sm:text-xs font-medium text-white/56">
                 {tabs[active].comment}
               </p>
-              <button className="flex items-center justify-between mx-auto mt-4 sm:mt-6 text-[10px] sm:text-xs w-[250px]  md:w-80 bg-[#AC0B0B] px-3 sm:px-4 py-2 rounded-full font-rajdhani uppercase text-white hover:bg-[#8A0909] transition-colors">
+              <button className="flex items-center justify-between mx-auto mt-4 sm:mt-6 text-[10px] sm:text-xs w-[250px]  md:w-64 bg-[#AC0B0B] px-3 sm:px-4 py-2 rounded-full font-rajdhani uppercase text-white hover:bg-[#8A0909] transition-colors">
                 <span className="border py-1.5 px-1.5 sm:py-2 sm:px-2 text-main bg-white rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

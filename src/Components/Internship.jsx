@@ -7,6 +7,7 @@ const Internship = () => {
   const [currentMobileCard, setCurrentMobileCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [isPaused, setIsPaused] = useState(false);
 
   // DITO MO ADJUST ILANG CARD GUSTO MO PER SCREEN
   useEffect(() => {
@@ -41,6 +42,8 @@ const Internship = () => {
   }, []);
 
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       if (isMobile) {
         setCurrentMobileCard((prev) => (prev + 1) % Caraosell.length);
@@ -49,24 +52,24 @@ const Internship = () => {
       }
     }, 4000);
     return () => clearInterval(interval);
-  }, [totalPages, isMobile]);
+  }, [totalPages, isMobile, isPaused]);
 
   return (
     <div className="justify-center mx-auto overflow-x-hidden w-full">
       <div className="flex items-center justify-center text-center mt-10 sm:mt-16 md:mt-20 xl:mt-40 px-4">
         <div className="w-full max-w-full">
 
-          <div className="flex items-center justify-center">
-            <div className="w-6 sm:w-8 md:w-12 lg:w-16 border-t border-main"></div>
+        <div className="flex items-center justify-center">
+          <div className="w-16 border-t border-main"></div>
           <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
-              Internship Journey
-            </span>
-            <div className="w-6 sm:w-8 md:w-12 lg:w-16 border-t border-main"></div>
-          </div>
+               Internship Journey
+          </span>
+          <div className="w-16 border-t border-main"></div>
+        </div>
 
     
-          <div className="flex justify-center mx-auto mb-10 sm:mb-16 md:mb-24 py-3 sm:py-4 md:py-5 px-4 sm:px-6">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-main max-w-3xl">
+          <div className="flex justify-center mx-auto mb-10 sm:mb-16 lg:mb-10 xl:mb-24 py-3 sm:py-4 md:py-5 px-4 sm:px-6">
+            <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-2xl text-center text-main max-w-3xl">
               Discover real stories from interns as they share their journey,
               experiences, and growth throughout the program.
             </p>
@@ -84,6 +87,10 @@ const Internship = () => {
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.3 }}
                     className="flex justify-center px-4"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onTouchStart={() => setIsPaused(true)}
+                    onTouchEnd={() => setIsPaused(false)}
                   >
                     <div className="w-full max-w-sm p-6 bg-white shadow-lg rounded-3xl flex flex-col justify-between">
                       <div className="flex justify-center mb-4">
@@ -126,6 +133,8 @@ const Internship = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.3 }}
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
                   className="
                     grid 
                     grid-cols-1 
@@ -144,7 +153,7 @@ const Internship = () => {
                       className="
                         bg-white shadow-lg rounded-3xl p-6 
                         flex flex-col justify-between 
-                        w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[300px]
+                        w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[250px] xl:max-w-[300px]
                         hover:scale-105 transition-transform duration-300
                       "
                     >

@@ -97,7 +97,7 @@ const Card = ({
 
           <div className="w-full md:w-[45%] lg:w-[40%] relative md:top-[5%] text-black flex flex-col justify-between md:justify-start">
             <div>
-              <h2 className="text-sm sm:text-sm md:text-sm lg:text-md font-rajdhani font-medium uppercase flex items-center justify-start md:absolute md:top-6 md:-left-16 bg-[#FFE0E0] border border-[#FF6565] text-main rounded-full py-2 px-4 md:py-3 md:px-5 w-full">
+              <h2 className="text-sm sm:text-sm md:text-sm lg:text-md font-rajdhani font-medium uppercase flex items-center justify-start md:absolute md:top-6 md:-left-2 bg-[#FFE0E0] border border-[#FF6565] text-main rounded-full py-2 px-4 md:py-3 md:px-5 w-full">
                 <span className="mr-3 rounded-full bg-main text-white py-1 px-2 text-[10px] sm:text-xs font-semibold">
                   {number}
                 </span>
@@ -161,7 +161,7 @@ export default function StackingCards() {
           <div className="w-16 border-t border-main"></div>
         </div>
 
-        <p className="max-w-4xl mx-auto text-black text-lg sm:text-sm lg:text-2xl  font-poppins leading-relaxed px-5 mt-5">
+        <p  className="max-w-4xl mx-auto text-black text-lg sm:text-sm lg:text-2xl  font-poppins leading-relaxed px-5 mt-5">
           We provide innovative software solutions and reliable systems tailored
           to your business needs—helping you optimize operations, enhance
           productivity, and achieve sustainable growth.

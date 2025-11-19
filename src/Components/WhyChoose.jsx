@@ -65,21 +65,21 @@ export default function WhyChoose({
       {" "}
       <div className="flex justify-center ">
         <div className=" max-w-2xl text-center px-4">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 border-t border-main"></div>
-            <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
-              Why Choose Intelliseven
-            </span>
-            <div className="w-16 border-t border-main"></div>
-          </div>
+            <div className="flex items-center justify-center mb-10">
+              <div className="w-16 border-t border-main"></div>
+              <span className="mx-4 text-[12px] sm:text-sm md:text-lg lg:text-4xl  text-main font-bold font-poppins">
+                Why Choose Intelliseven
+              </span>
+              <div className="w-16 border-t border-main"></div>
+            </div>
         </div>
       </div>
       <div className="max-w-xs md:max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 place-items-stretch">
-          {items.map((item, i) => (
+          {items.map((item, i) => ( 
             <div
               key={i}
-              className="bg-white shadow-top-only rounded-3xl p-6 sm:p-7 md:p-8 flex flex-col justify-between h-full"
+              className="bg-white shadow-top-only rounded-3xl p-6 sm:p-7 md:p-8 lg:p-5 xl:p-5 flex flex-col justify-between h-full"
             >
               <div>
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">

@@ -30,7 +30,7 @@ const Header = () => {
               />
             </div>
 
-            <div className="hidden lg:flex text-left gap-6 xl:gap-10 ml-8 xl:ml-24">
+            <div className="hidden lg:flex text-left gap-6 xl:gap-10 ml-8 xl:ml-72">
               <div className="flex py-4 gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
